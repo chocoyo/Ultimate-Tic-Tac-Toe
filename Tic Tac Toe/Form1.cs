@@ -8,6 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Things to do
+
+//Get Permutations Working (Hopfuly In Differnt File)
+//Make A Function To Choose What Square To Make The Player Play In
+//Figure Out How To Restore Sections And ReDisabled the Already Clicked Buttons
+
+
+
 namespace Tic_Tac_Toe
 {
     public partial class Form1 : Form
@@ -30,6 +38,12 @@ namespace Tic_Tac_Toe
         bool Square1Done = false;
         bool Square2Done = false;
         bool Square3Done = false;
+        bool Square4Done = false;
+        bool Square5Done = false;
+        bool Square6Done = false;
+        bool Square7Done = false;
+        bool Square8Done = false;
+        bool Square9Done = false;
 
 
         public void BlankSquares(int area) {
@@ -38,6 +52,42 @@ namespace Tic_Tac_Toe
             {
                 case 0:
                     MessageBox.Show("Wildcard");
+                    if (!Square1Done)
+                    {
+
+                    }
+                    if (!Square2Done)
+                    {
+
+                    }
+                    if (!Square3Done)
+                    {
+
+                    }
+                    if (!Square4Done)
+                    {
+
+                    }
+                    if (!Square5Done)
+                    {
+
+                    }
+                    if (!Square6Done)
+                    {
+
+                    }
+                    if (!Square7Done)
+                    {
+
+                    }
+                    if (!Square8Done)
+                    {
+
+                    }
+                    if (!Square9Done)
+                    {
+
+                    }
                     break;
                 case 1:
                     A11.Enabled = false;
@@ -85,14 +135,59 @@ namespace Tic_Tac_Toe
                     C43.Enabled = false;
                     break;
                 case 5:
+                    A51.Enabled = false;
+                    A52.Enabled = false;
+                    A53.Enabled = false;
+                    B51.Enabled = false;
+                    B52.Enabled = false;
+                    B53.Enabled = false;
+                    C51.Enabled = false;
+                    C52.Enabled = false;
+                    C53.Enabled = false;
                     break;
                 case 6:
+                    A61.Enabled = false;
+                    A62.Enabled = false;
+                    A63.Enabled = false;
+                    B61.Enabled = false;
+                    B62.Enabled = false;
+                    B63.Enabled = false;
+                    C61.Enabled = false;
+                    C62.Enabled = false;
+                    C63.Enabled = false;
                     break;
                 case 7:
+                    A71.Enabled = false;
+                    A72.Enabled = false;
+                    A73.Enabled = false;
+                    B71.Enabled = false;
+                    B72.Enabled = false;
+                    B73.Enabled = false;
+                    C71.Enabled = false;
+                    C72.Enabled = false;
+                    C73.Enabled = false;
                     break;
                 case 8:
+                    A81.Enabled = false;
+                    A82.Enabled = false;
+                    A83.Enabled = false;
+                    B81.Enabled = false;
+                    B82.Enabled = false;
+                    B83.Enabled = false;
+                    C81.Enabled = false;
+                    C82.Enabled = false;
+                    C83.Enabled = false;
                     break;
                 case 9:
+                    A91.Enabled = false;
+                    A92.Enabled = false;
+                    A93.Enabled = false;
+                    B91.Enabled = false;
+                    B92.Enabled = false;
+                    B93.Enabled = false;
+                    C91.Enabled = false;
+                    C92.Enabled = false;
+                    C93.Enabled = false;
                     break;
                 default:
                     break;
@@ -103,11 +198,7 @@ namespace Tic_Tac_Toe
 
         public void ifFinnish()
         {
-            if (plays == 9)
-            {
-                finnish();
-                MessageBox.Show("No One Won:(");
-            }
+            //a way to tell if no one one
 
         }
 
@@ -373,14 +464,14 @@ namespace Tic_Tac_Toe
         }
        
 
-        public void setSquare(char Letter, int Number)
+        public void setSquare(char Letter, int Number, int Number2)
         {
             if (turn == 'X')
             {
                 switch (Letter)
                 {
                     case 'A':
-                        switch (Number)
+                        switch (Number2)
                         {
                             case 1:
                                 A11.Text = "X";
@@ -405,7 +496,7 @@ namespace Tic_Tac_Toe
                         }
                         break;
                     case 'B':
-                        switch (Number)
+                        switch (Number2)
                         {
                             case 1:
                                 B11.Text = "X";
@@ -430,7 +521,7 @@ namespace Tic_Tac_Toe
                         }
                         break;
                     case 'C':
-                        switch (Number)
+                        switch (Number2)
                         {
                             case 1:
                                 C11.Text = "X";
@@ -465,7 +556,7 @@ namespace Tic_Tac_Toe
                 switch (Letter)
                 {
                     case 'A':
-                        switch (Number)
+                        switch (Number2)
                         {
                             case 1:
                                 A11.Text = "O";
@@ -490,7 +581,7 @@ namespace Tic_Tac_Toe
                         }
                         break;
                     case 'B':
-                        switch (Number)
+                        switch (Number2)
                         {
                             case 1:
                                 B11.Text = "O";
@@ -515,7 +606,7 @@ namespace Tic_Tac_Toe
                         }
                         break;
                     case 'C':
-                        switch (Number)
+                        switch (Number2)
                         {
                             case 1:
                                 C11.Text = "O";
@@ -553,47 +644,47 @@ namespace Tic_Tac_Toe
 
         private void A1_Click(object sender, EventArgs e)
         {
-            setSquare('A',1);
+            setSquare('A', 1, 1);
         }
 
         private void A2_Click(object sender, EventArgs e)
         {
-            setSquare('A', 2);
+            setSquare('A', 1, 2);
         }
 
         private void A3_Click(object sender, EventArgs e)
         {
-            setSquare('A', 3);
+            setSquare('A', 1, 3);
         }
 
         private void B1_Click(object sender, EventArgs e)
         {
-            setSquare('B', 1);
+            setSquare('B', 1, 1);
         }
 
         private void B2_Click(object sender, EventArgs e)
         {
-            setSquare('B', 2);
+            setSquare('B', 1, 2);
         }
 
         private void B3_Click(object sender, EventArgs e)
         {
-            setSquare('B', 3);
+            setSquare('B', 1, 3);
         }
 
         private void C1_Click(object sender, EventArgs e)
         {
-            setSquare('C', 1);
+            setSquare('C', 1, 1);
         }
 
         private void C2_Click(object sender, EventArgs e)
         {
-            setSquare('C', 2);
+            setSquare('C', 1, 2);
         }
 
         private void C3_Click(object sender, EventArgs e)
         {
-            setSquare('C', 3);
+            setSquare('C', 1, 3);
         }
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
