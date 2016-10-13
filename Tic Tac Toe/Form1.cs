@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 //Things to do
 
-//Get Permutations Working (Hopfuly In Differnt File) - DONE! Not Tested
+//Make The Program Know Who Won XD
+//      Find And Replace "Done" With "Donex" and do the same thing for o. Then Change The Check Areas Function
 //Make A Function To Choose What Square To Make The Player Play In
-//Get The Set Square Function Working
 //Set The Bools When The Squares Are Done, And Set All Of That Section To The Winning Letter
 //Figure Out How To Restore Sections And ReDisabled the Already Clicked Buttons
 
@@ -49,47 +49,138 @@ namespace Tic_Tac_Toe
         bool Square9Done = false;
 
 
+
+        public void UnBlankSquares(int area) {
+
+            switch (area)
+            {
+                case 0:
+                    for (int i = 1; i <= 9; i++)
+                    {
+                        UnBlankSquares(i);
+                    }
+                    break;
+                case 1:
+                    A11.Enabled = true;
+                    A12.Enabled = true;
+                    A13.Enabled = true;
+                    B11.Enabled = true;
+                    B12.Enabled = true;
+                    B13.Enabled = true;
+                    C11.Enabled = true;
+                    C12.Enabled = true;
+                    C13.Enabled = true;
+
+                    break;
+                case 2:
+                    A21.Enabled = true;
+                    A22.Enabled = true;
+                    A23.Enabled = true;
+                    B21.Enabled = true;
+                    B22.Enabled = true;
+                    B23.Enabled = true;
+                    C21.Enabled = true;
+                    C22.Enabled = true;
+                    C23.Enabled = true;
+                    break;
+                case 3:
+                    A31.Enabled = true;
+                    A32.Enabled = true;
+                    A33.Enabled = true;
+                    B31.Enabled = true;
+                    B32.Enabled = true;
+                    B33.Enabled = true;
+                    C31.Enabled = true;
+                    C32.Enabled = true;
+                    C33.Enabled = true;
+                    break;
+                case 4:
+                    A41.Enabled = true;
+                    A42.Enabled = true;
+                    A43.Enabled = true;
+                    B41.Enabled = true;
+                    B42.Enabled = true;
+                    B43.Enabled = true;
+                    C41.Enabled = true;
+                    C42.Enabled = true;
+                    C43.Enabled = true;
+                    break;
+                case 5:
+                    A51.Enabled = true;
+                    A52.Enabled = true;
+                    A53.Enabled = true;
+                    B51.Enabled = true;
+                    B52.Enabled = true;
+                    B53.Enabled = true;
+                    C51.Enabled = true;
+                    C52.Enabled = true;
+                    C53.Enabled = true;
+                    break;
+                case 6:
+                    A61.Enabled = true;
+                    A62.Enabled = true;
+                    A63.Enabled = true;
+                    B61.Enabled = true;
+                    B62.Enabled = true;
+                    B63.Enabled = true;
+                    C61.Enabled = true;
+                    C62.Enabled = true;
+                    C63.Enabled = true;
+                    break;
+                case 7:
+                    A71.Enabled = true;
+                    A72.Enabled = true;
+                    A73.Enabled = true;
+                    B71.Enabled = true;
+                    B72.Enabled = true;
+                    B73.Enabled = true;
+                    C71.Enabled = true;
+                    C72.Enabled = true;
+                    C73.Enabled = true;
+                    break;
+                case 8:
+                    A81.Enabled = true;
+                    A82.Enabled = true;
+                    A83.Enabled = true;
+                    B81.Enabled = true;
+                    B82.Enabled = true;
+                    B83.Enabled = true;
+                    C81.Enabled = true;
+                    C82.Enabled = true;
+                    C83.Enabled = true;
+                    break;
+                case 9:
+                    A91.Enabled = true;
+                    A92.Enabled = true;
+                    A93.Enabled = true;
+                    B91.Enabled = true;
+                    B92.Enabled = true;
+                    B93.Enabled = true;
+                    C91.Enabled = true;
+                    C92.Enabled = true;
+                    C93.Enabled = true;
+                    break;
+                default:
+                    break;
+            }
+
+
+        }
+
+        public void ifFinnish()
+        {
+            //a way to tell if no one won
+
+        }
+
         public void BlankSquares(int area) {
 
             switch (area)
             {
                 case 0:
-                    MessageBox.Show("Wildcard");
-                    if (!Square1Done)
+                    for (int i = 1; i <= 9; i++)
                     {
-
-                    }
-                    if (!Square2Done)
-                    {
-
-                    }
-                    if (!Square3Done)
-                    {
-
-                    }
-                    if (!Square4Done)
-                    {
-
-                    }
-                    if (!Square5Done)
-                    {
-
-                    }
-                    if (!Square6Done)
-                    {
-
-                    }
-                    if (!Square7Done)
-                    {
-
-                    }
-                    if (!Square8Done)
-                    {
-
-                    }
-                    if (!Square9Done)
-                    {
-
+                        BlankSquares(i);
                     }
                     break;
                 case 1:
@@ -198,39 +289,75 @@ namespace Tic_Tac_Toe
 
 
         }
+      
+        public int CheckAreas() {
 
-        public void ifFinnish()
-        {
-            //a way to tell if no one one
+            xPermutations();
+            oPermutations();
+            if (Square1Done)
+            {
+                BlankSquares(1);
+            }
 
-        }
+            if (Square2Done)
+            {
+                BlankSquares(2);
+            }
+            if (Square3Done)
+            {
+                BlankSquares(3);
+            }
+            if (Square4Done)
+            {
+                BlankSquares(4);
+            }
+            if (Square5Done)
+            {
+                BlankSquares(5);
+            }
+            if (Square6Done)
+            {
+                BlankSquares(6);
+            }
+            if (Square7Done)
+            {
+                BlankSquares(7);
+            }
+            if (Square8Done)
+            {
+                BlankSquares(8);
+            }
+            if (Square9Done)
+            {
+                BlankSquares(9);
+            }
 
-        public void finnish()
-        {
+            if (UltimatePermutaions() == 1)
+            {
+                return 3;
+            }
+
+            return 100;
             
-            A11.Enabled = false;
-            A12.Enabled = false;
-            A13.Enabled = false;
-            B11.Enabled = false;
-            B12.Enabled = false;
-            B13.Enabled = false;
-            C11.Enabled = false;
-            C12.Enabled = false;
-            C13.Enabled = false;
         }
-
         public void CheckWin()
         {
-            if (xPermutations() == 1)
+            if (CheckAreas() == 1)
             {
-                finnish();
+                BlankSquares(0);
                 MessageBox.Show("X WINS!", "Tic Tac Toe");
             }
 
-            if (oPermutations() == 1)
+            if (CheckAreas() == 2)
             {
-                finnish();
+                BlankSquares(0);
                 MessageBox.Show("O WINS!", "Tic Tac Toe");
+            }
+
+            if (CheckAreas() == 3)
+            {
+                BlankSquares(0);
+                MessageBox.Show("Somone WON!!! hahahah");
             }
         }
 
@@ -513,6 +640,361 @@ namespace Tic_Tac_Toe
         private void A21_Click(object sender, EventArgs e)
         {
             setSquare('A', 2, 1);
+        }
+
+        private void A22_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 2, 2);
+        }
+
+        private void A23_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 2, 3);
+        }
+
+        private void B21_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 2, 1);
+        }
+
+        private void B22_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 2, 2);
+        }
+
+        private void B23_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 2, 3);
+        }
+
+        private void C21_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 2, 1);
+        }
+
+        private void C22_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 2, 2);
+        }
+
+        private void C23_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 2, 3);
+        }
+
+        private void A31_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 3, 1);
+        }
+
+        private void A32_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 3, 2);
+        }
+
+        private void A33_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 3, 3);
+        }
+
+        private void B31_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 3, 1);
+        }
+
+        private void B32_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 3, 2);
+        }
+
+        private void B33_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 3, 3);
+        }
+
+        private void C31_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 3, 1);
+        }
+
+        private void C32_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 3, 2);
+        }
+
+        private void C33_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 3, 3);
+        }
+
+        private void A41_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 4, 1);
+        }
+
+        private void A42_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 4, 2);
+        }
+
+        private void A43_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 4, 3);
+        }
+
+        private void B41_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 4, 1);
+        }
+
+        private void B42_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 4, 2);
+        }
+
+        private void B43_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 4, 3);
+        }
+
+        private void C41_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 4, 1);
+        }
+
+        private void C42_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 4, 2);
+        }
+
+        private void C43_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 4, 3);
+        }
+
+        private void A51_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 5, 1);
+        }
+
+        private void A52_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 5, 2);
+        }
+
+        private void A53_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 5, 3);
+        }
+
+        private void B51_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 5, 1);
+        }
+
+        private void B52_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 5, 2);
+        }
+
+        private void B53_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 5, 3);
+        }
+
+        private void C51_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 5, 1);
+        }
+
+        private void C52_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 5, 2);
+        }
+
+        private void C53_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 5, 3);
+        }
+
+        private void A61_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 6, 1);
+        }
+
+        private void A62_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 6, 2);
+        }
+
+        private void A63_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 6, 3);
+        }
+
+        private void B61_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 6, 1);
+        }
+
+        private void B62_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 6, 2);
+        }
+
+        private void B63_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 6, 3);
+        }
+
+        private void C61_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 6, 1);
+        }
+
+        private void C62_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 6, 2);
+        }
+
+        private void C63_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 6, 3);
+        }
+
+        private void A71_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 7, 1);
+        }
+
+        private void A72_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 7, 2);
+        }
+
+        private void A73_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 7, 3);
+        }
+
+        private void B71_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 7, 1);
+        }
+
+        private void B72_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 7, 2);
+        }
+
+        private void B73_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 7, 3);
+        }
+
+        private void C71_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 7, 1);
+        }
+
+        private void C72_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 7, 2);
+        }
+
+        private void C73_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 7, 3);
+        }
+
+        private void A81_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 8, 1);
+        }
+
+        private void A82_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 8, 2);
+        }
+
+        private void A83_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 8, 3);
+        }
+
+        private void B81_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 8, 1);
+        }
+
+        private void B82_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 8, 2);
+        }
+
+        private void B83_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 8, 3);
+        }
+
+        private void C81_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 8, 1);
+        }
+
+        private void C82_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 8, 2);
+        }
+
+        private void C83_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 8, 3);
+        }
+
+        private void A91_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 9, 1);
+        }
+
+        private void A92_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 9, 2);
+        }
+
+        private void A93_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 9, 3);
+        }
+
+        private void B91_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 9, 1);
+        }
+
+        private void B92_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 9, 2);
+        }
+
+        private void B93_Click(object sender, EventArgs e)
+        {
+            setSquare('B', 9, 3);
+        }
+
+        private void C91_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 9, 1);
+        }
+
+        private void C92_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 9, 2);
+        }
+
+        private void C93_Click(object sender, EventArgs e)
+        {
+            setSquare('C', 9, 3);
         }
     }
 }

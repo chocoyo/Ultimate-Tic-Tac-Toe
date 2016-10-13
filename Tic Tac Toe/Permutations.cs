@@ -9,9 +9,9 @@ namespace Tic_Tac_Toe
 
     public partial class Form1 : Form
     {
-        public int xPermutations()
+        public void xPermutations()
         {
-            int check = 0;
+            //int check = 0;
 
             //First Section
             if (X.A11)
@@ -21,7 +21,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.A13)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -29,7 +30,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C11)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -37,7 +39,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C13)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -50,7 +53,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C12)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -63,7 +67,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C11)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -71,7 +76,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C13)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -83,7 +89,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.B11)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -94,7 +101,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C13)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -109,7 +117,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.A23)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -117,7 +126,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C21)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -125,7 +135,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C23)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -138,7 +149,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C22)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -151,7 +163,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C21)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -159,7 +172,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C23)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -171,7 +185,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.B21)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -182,7 +197,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C23)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -196,7 +212,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.A33)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -204,7 +221,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C31)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -212,7 +230,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C33)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -225,7 +244,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C32)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -238,7 +258,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C31)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -246,7 +267,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C33)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -258,7 +280,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.B31)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -269,7 +292,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C33)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -282,7 +306,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.A43)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -290,7 +315,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C41)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -298,7 +324,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C43)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -311,7 +338,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C42)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -324,7 +352,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C41)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -332,7 +361,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C43)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -344,7 +374,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.B41)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -355,7 +386,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C43)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -369,7 +401,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.A53)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -377,7 +410,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C51)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -385,7 +419,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C53)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -398,7 +433,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C52)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -411,7 +447,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C51)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -419,7 +456,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C53)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -431,7 +469,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.B51)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -442,7 +481,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C53)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -456,7 +496,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.A63)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -464,7 +505,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C61)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -472,7 +514,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C63)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -485,7 +528,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C62)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -498,7 +542,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C61)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -506,7 +551,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C63)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -518,7 +564,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.B61)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -529,7 +576,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C63)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -544,7 +592,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.A73)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -552,7 +601,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C71)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -560,7 +610,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C73)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -573,7 +624,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C72)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -586,7 +638,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C71)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -594,7 +647,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C73)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -606,7 +660,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.B71)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -617,7 +672,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C73)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -631,7 +687,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.A83)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -639,7 +696,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C81)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -647,7 +705,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C83)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -660,7 +719,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C82)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -673,7 +733,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C81)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -681,7 +742,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C83)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -693,7 +755,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.B81)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -704,7 +767,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C83)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -720,7 +784,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.A93)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -728,7 +793,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C91)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -736,7 +802,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C93)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -749,7 +816,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C92)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -762,7 +830,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C91)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -770,7 +839,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C93)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -782,7 +852,8 @@ namespace Tic_Tac_Toe
                 {
                     if (X.B91)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -793,23 +864,24 @@ namespace Tic_Tac_Toe
                 {
                     if (X.C93)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
             }
 
 
 
-            return check;
+            //return check;
         }
 
 
 
 
-        public int oPermutations()
+        public void oPermutations()
         {
 
-            int check = 0;
+            //int check = 0;
 
             //First Section
             if (O.A11)
@@ -819,7 +891,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.A13)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -827,7 +900,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C11)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -835,7 +909,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C13)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -848,7 +923,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C12)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -861,7 +937,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C11)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -869,7 +946,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C13)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -881,7 +959,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.B11)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -892,7 +971,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C13)
                     {
-                        check = 1;
+                        Square1Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -907,7 +987,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.A23)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -915,7 +996,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C21)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -923,7 +1005,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C23)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -936,7 +1019,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C22)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -949,7 +1033,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C21)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -957,7 +1042,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C23)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -969,7 +1055,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.B21)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -980,7 +1067,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C23)
                     {
-                        check = 1;
+                        Square2Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -994,7 +1082,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.A33)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -1002,7 +1091,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C31)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -1010,7 +1100,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C33)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -1023,7 +1114,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C32)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1036,7 +1128,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C31)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -1044,7 +1137,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C33)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1056,7 +1150,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.B31)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1067,7 +1162,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C33)
                     {
-                        check = 1;
+                        Square3Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1080,7 +1176,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.A43)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -1088,7 +1185,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C41)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -1096,7 +1194,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C43)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -1109,7 +1208,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C42)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1122,7 +1222,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C41)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -1130,7 +1231,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C43)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1142,7 +1244,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.B41)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1153,7 +1256,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C43)
                     {
-                        check = 1;
+                        Square4Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1167,7 +1271,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.A53)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -1175,7 +1280,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C51)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -1183,7 +1289,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C53)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -1196,7 +1303,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C52)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1209,7 +1317,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C51)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -1217,7 +1326,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C53)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1229,7 +1339,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.B51)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1240,7 +1351,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C53)
                     {
-                        check = 1;
+                        Square5Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1254,7 +1366,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.A63)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -1262,7 +1375,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C61)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -1270,7 +1384,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C63)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -1283,7 +1398,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C62)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1296,7 +1412,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C61)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -1304,7 +1421,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C63)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1316,7 +1434,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.B61)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1327,7 +1446,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C63)
                     {
-                        check = 1;
+                        Square6Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1342,7 +1462,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.A73)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -1350,7 +1471,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C71)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -1358,7 +1480,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C73)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -1371,7 +1494,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C72)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1384,7 +1508,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C71)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -1392,7 +1517,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C73)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1404,7 +1530,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.B71)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1415,7 +1542,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C73)
                     {
-                        check = 1;
+                        Square7Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1429,7 +1557,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.A83)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -1437,7 +1566,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C81)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -1445,7 +1575,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C83)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -1458,7 +1589,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C82)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1471,7 +1603,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C81)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -1479,7 +1612,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C83)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1491,7 +1625,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.B81)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1502,7 +1637,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C83)
                     {
-                        check = 1;
+                        Square8Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1518,7 +1654,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.A93)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
                 //Left Down
@@ -1526,7 +1663,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C91)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
                 //Diagonal Top Left To Bottom Right
@@ -1534,7 +1672,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C93)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
 
@@ -1547,7 +1686,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C92)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1560,7 +1700,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C91)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
                 //Right Down
@@ -1568,7 +1709,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C93)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1580,7 +1722,8 @@ namespace Tic_Tac_Toe
                 {
                     if (O.B91)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
             }
@@ -1591,17 +1734,125 @@ namespace Tic_Tac_Toe
                 {
                     if (O.C93)
                     {
-                        check = 1;
+                        Square9Done = true;
+                        //check = 1;
                     }
                 }
             }
 
 
 
-            return check;
+            //return check;
 
         }
 
+
+        public int UltimatePermutaions() {
+            
+            //Skeleton For Ultimate Permutations
+
+            int check = 0;
+
+            //First Section
+            if (Square1Done)
+            {
+                //Across the top
+                if (Square2Done)
+                {
+                    if (Square3Done)
+                    {
+                        
+                        check = 1;
+                    }
+                }
+                //Left Down
+                if (Square4Done)
+                {
+                    if (Square7Done)
+                    {
+                       
+                        check = 1;
+                    }
+                }
+                //Diagonal Top Left To Bottom Right
+                if (Square5Done)
+                {
+                    if (Square9Done)
+                    {
+                    
+                        check = 1;
+                    }
+                }
+
+            }
+
+            //Middle Down
+            if (Square2Done)
+            {
+                if (Square5Done)
+                {
+                    if (Square8Done)
+                    {
+                        check = 1;
+                    }
+                }
+            }
+
+
+            if (Square3Done)
+            {
+                //Diagonal Top Right To Bottom Left
+                if (Square5Done)
+                {
+                    if (Square7Done)
+                    {
+
+                        check = 1;
+                    }
+                }
+                //Right Down
+                if (Square6Done)
+                {
+                    if (Square9Done)
+                    {
+                        Square1Done = true;
+                        check = 1;
+                    }
+                }
+            }
+
+            //Across the middle
+            if (Square6Done)
+            {
+                if (Square5Done)
+                {
+                    if (Square4Done)
+                    {
+                        
+                        check = 1;
+                    }
+                }
+            }
+            //Across the bottom
+            if (Square7Done)
+            {
+                if (Square8Done)
+                {
+                    if (Square9Done)
+                    {
+                        
+                        check = 1;
+                    }
+                }
+            }
+
+            return check;
+
+
+
+
+
+        }
 
 
 
