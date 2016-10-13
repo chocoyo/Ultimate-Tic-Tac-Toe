@@ -15,7 +15,6 @@ using System.Windows.Forms;
 //Set The Bools When The Squares Are Done, And Set All Of That Section To The Winning Letter
 //Figure Out How To Restore Sections And ReDisabled the Already Clicked Buttons
 //Configer The Reset Squares Function
-//Make The Set Text Function
 
 
 
@@ -310,33 +309,6 @@ namespace Tic_Tac_Toe
                 switch (area)
                 {
                     case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
-                    case 7:
-                        break;
-                    case 8:
-                        break;
-                    case 9:
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-            if (team == 'O')
-            {
-                switch (area)
-                {
-                    case 1:
                         A11.Text = "X";
                         A12.Text = "X";
                         A13.Text = "X";
@@ -348,20 +320,200 @@ namespace Tic_Tac_Toe
                         C13.Text = "X";
                         break;
                     case 2:
+                        A21.Text = "X";
+                        A22.Text = "X";
+                        A23.Text = "X";
+                        B21.Text = "X";
+                        B22.Text = "X";
+                        B23.Text = "X";
+                        C21.Text = "X";
+                        C22.Text = "X";
+                        C23.Text = "X";
                         break;
                     case 3:
+                        A31.Text = "X";
+                        A32.Text = "X";
+                        A33.Text = "X";
+                        B31.Text = "X";
+                        B32.Text = "X";
+                        B33.Text = "X";
+                        C31.Text = "X";
+                        C32.Text = "X";
+                        C33.Text = "X";
                         break;
                     case 4:
+                        A41.Text = "X";
+                        A42.Text = "X";
+                        A43.Text = "X";
+                        B41.Text = "X";
+                        B42.Text = "X";
+                        B43.Text = "X";
+                        C41.Text = "X";
+                        C42.Text = "X";
+                        C43.Text = "X";
                         break;
                     case 5:
+                        A51.Text = "X";
+                        A52.Text = "X";
+                        A53.Text = "X";
+                        B51.Text = "X";
+                        B52.Text = "X";
+                        B53.Text = "X";
+                        C51.Text = "X";
+                        C52.Text = "X";
+                        C53.Text = "X";
                         break;
                     case 6:
+                        A61.Text = "X";
+                        A62.Text = "X";
+                        A63.Text = "X";
+                        B61.Text = "X";
+                        B62.Text = "X";
+                        B63.Text = "X";
+                        C61.Text = "X";
+                        C62.Text = "X";
+                        C63.Text = "X";
                         break;
                     case 7:
+                        A71.Text = "X";
+                        A72.Text = "X";
+                        A73.Text = "X";
+                        B71.Text = "X";
+                        B72.Text = "X";
+                        B73.Text = "X";
+                        C71.Text = "X";
+                        C72.Text = "X";
+                        C73.Text = "X";
                         break;
                     case 8:
+                        A81.Text = "X";
+                        A82.Text = "X";
+                        A83.Text = "X";
+                        B81.Text = "X";
+                        B82.Text = "X";
+                        B83.Text = "X";
+                        C81.Text = "X";
+                        C82.Text = "X";
+                        C83.Text = "X";
                         break;
                     case 9:
+                        A91.Text = "X";
+                        A92.Text = "X";
+                        A93.Text = "X";
+                        B91.Text = "X";
+                        B92.Text = "X";
+                        B93.Text = "X";
+                        C91.Text = "X";
+                        C92.Text = "X";
+                        C93.Text = "X";
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            if (team == 'O')
+            {
+                switch (area)
+                {
+                    case 1:
+                        A11.Text = "O";
+                        A12.Text = "O";
+                        A13.Text = "O";
+                        B11.Text = "O";
+                        B12.Text = "O";
+                        B13.Text = "O";
+                        C11.Text = "O";
+                        C12.Text = "O";
+                        C13.Text = "O";
+                        break;
+                    case 2:
+                        A21.Text = "O";
+                        A22.Text = "O";
+                        A23.Text = "O";
+                        B21.Text = "O";
+                        B22.Text = "O";
+                        B23.Text = "O";
+                        C21.Text = "O";
+                        C22.Text = "O";
+                        C23.Text = "O";
+                        break;
+                    case 3:
+                        A31.Text = "O";
+                        A32.Text = "O";
+                        A33.Text = "O";
+                        B31.Text = "O";
+                        B32.Text = "O";
+                        B33.Text = "O";
+                        C31.Text = "O";
+                        C32.Text = "O";
+                        C33.Text = "O";
+                        break;
+                    case 4:
+                         A41.Text = "O";
+                        A42.Text = "O";
+                        A43.Text = "O";
+                        B41.Text = "O";
+                        B42.Text = "O";
+                        B43.Text = "O";
+                        C41.Text = "O";
+                        C42.Text = "O";
+                        C43.Text = "O";
+                        break;
+                    case 5:
+                        A51.Text = "O";
+                        A52.Text = "O";
+                        A53.Text = "O";
+                        B51.Text = "O";
+                        B52.Text = "O";
+                        B53.Text = "O";
+                        C51.Text = "O";
+                        C52.Text = "O";
+                        C53.Text = "O";
+                        break;
+                    case 6:
+                        A61.Text = "O";
+                        A62.Text = "O";
+                        A63.Text = "O";
+                        B61.Text = "O";
+                        B62.Text = "O";
+                        B63.Text = "O";
+                        C61.Text = "O";
+                        C62.Text = "O";
+                        C63.Text = "O";
+                        break;
+                    case 7:
+                         A71.Text = "O";
+                        A72.Text = "O";
+                        A73.Text = "O";
+                        B71.Text = "O";
+                        B72.Text = "O";
+                        B73.Text = "O";
+                        C71.Text = "O";
+                        C72.Text = "O";
+                        C73.Text = "O";
+                        break;
+                    case 8:
+                        A81.Text = "O";
+                        A82.Text = "O";
+                        A83.Text = "O";
+                        B81.Text = "O";
+                        B82.Text = "O";
+                        B83.Text = "O";
+                        C81.Text = "O";
+                        C82.Text = "O";
+                        C83.Text = "O";
+                        break;
+                    case 9:
+                        A91.Text = "O";
+                        A92.Text = "O";
+                        A93.Text = "O";
+                        B91.Text = "O";
+                        B92.Text = "O";
+                        B93.Text = "O";
+                        C91.Text = "O";
+                        C92.Text = "O";
+                        C93.Text = "O";
                         break;
 
                     default:
@@ -397,35 +549,106 @@ namespace Tic_Tac_Toe
             if (Square2DoneX || Square2DoneO)
             {
                 BlankSquares(2);
-                
+                if (Square2DoneX)
+                {
+                    SetText(2, 'X');
+                }
+                else
+                {
+                    SetText(2, 'O');
+                }
+
             }
             if (Square3DoneX || Square3DoneO)
             {
                 BlankSquares(3);
+                if (Square3DoneX)
+                {
+                    SetText(3, 'X');
+                }
+                else
+                {
+                    SetText(3, 'O');
+                }
+
             }
             if (Square4DoneX || Square4DoneO)
             {
                 BlankSquares(4);
+                if (Square4DoneX)
+                {
+                    SetText(4, 'X');
+                }
+                else
+                {
+                    SetText(4, 'O');
+                }
+
             }
             if (Square5DoneX || Square5DoneO)
             {
                 BlankSquares(5);
+                if (Square5DoneX)
+                {
+                    SetText(5, 'X');
+                }
+                else
+                {
+                    SetText(5, 'O');
+                }
+
             }
             if (Square6DoneX || Square6DoneO)
             {
                 BlankSquares(6);
+                if (Square6DoneX)
+                {
+                    SetText(6, 'X');
+                }
+                else
+                {
+                    SetText(6, 'O');
+                }
+
             }
             if (Square7DoneX || Square7DoneO)
             {
                 BlankSquares(7);
+                if (Square7DoneX)
+                {
+                    SetText(7, 'X');
+                }
+                else
+                {
+                    SetText(7, 'O');
+                }
+
             }
             if (Square8DoneX || Square8DoneO)
             {
                 BlankSquares(8);
+                if (Square8DoneX)
+                {
+                    SetText(8, 'X');
+                }
+                else
+                {
+                    SetText(8, 'O');
+                }
+
             }
             if (Square9DoneX || Square9DoneO)
             {
                 BlankSquares(9);
+                if (Square9DoneX)
+                {
+                    SetText(9, 'X');
+                }
+                else
+                {
+                    SetText(9, 'O');
+                }
+
             }
 
             if (UltimatePermutaionsX() == 1)
