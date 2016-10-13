@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 //Things to do
 
-//Make A Function To Choose What Square To Make The Player Play In
+//Fix The Highlighting Problem
 //Configer The Reset Squares Function
 //Configer The New Game Function
 
@@ -821,11 +821,6 @@ namespace Tic_Tac_Toe
                 MessageBox.Show("O WINS!", "Tic Tac Toe");
             }
 
-            if (CheckAreas() == 3)
-            {
-                BlankSquares(0);
-                MessageBox.Show("Somone WON!!! hahahah");
-            }
         }
 
         
@@ -840,6 +835,7 @@ namespace Tic_Tac_Toe
 
         public void resetSquare()
         {   
+                            //Reset The Text On All Of The Buttons
                             A11.Text = "";
                             A11.Enabled = true;
                             A12.Text = "";
@@ -858,6 +854,159 @@ namespace Tic_Tac_Toe
                             C12.Enabled = true;
                             C13.Text = "";
                             C13.Enabled = true;
+
+            A21.Text = "";
+            A21.Enabled = true;
+            A22.Text = "";
+            A22.Enabled = true;
+            A23.Text = "";
+            A23.Enabled = true;
+            B21.Text = "";
+            B21.Enabled = true;
+            B22.Text = "";
+            B22.Enabled = true;
+            B23.Text = "";
+            B23.Enabled = true;
+            C21.Text = "";
+            C21.Enabled = true;
+            C22.Text = "";
+            C22.Enabled = true;
+            C23.Text = "";
+            C23.Enabled = true;
+
+            A31.Text = "";
+            A31.Enabled = true;
+            A32.Text = "";
+            A32.Enabled = true;
+            A33.Text = "";
+            A33.Enabled = true;
+            B31.Text = "";
+            B31.Enabled = true;
+            B32.Text = "";
+            B32.Enabled = true;
+            B33.Text = "";
+            B33.Enabled = true;
+            C31.Text = "";
+            C31.Enabled = true;
+            C32.Text = "";
+            C32.Enabled = true;
+            C33.Text = "";
+            C33.Enabled = true;
+
+            A41.Text = "";
+            A41.Enabled = true;
+            A42.Text = "";
+            A42.Enabled = true;
+            A43.Text = "";
+            A43.Enabled = true;
+            B41.Text = "";
+            B41.Enabled = true;
+            B42.Text = "";
+            B42.Enabled = true;
+            B43.Text = "";
+            B43.Enabled = true;
+            C41.Text = "";
+            C41.Enabled = true;
+            C42.Text = "";
+            C42.Enabled = true;
+            C43.Text = "";
+            C43.Enabled = true;
+
+            A51.Text = "";
+            A51.Enabled = true;
+            A52.Text = "";
+            A52.Enabled = true;
+            A53.Text = "";
+            A53.Enabled = true;
+            B51.Text = "";
+            B51.Enabled = true;
+            B52.Text = "";
+            B52.Enabled = true;
+            B53.Text = "";
+            B53.Enabled = true;
+            C51.Text = "";
+            C51.Enabled = true;
+            C52.Text = "";
+            C52.Enabled = true;
+            C53.Text = "";
+            C53.Enabled = true;
+
+            A61.Text = "";
+            A61.Enabled = true;
+            A62.Text = "";
+            A62.Enabled = true;
+            A63.Text = "";
+            A63.Enabled = true;
+            B61.Text = "";
+            B61.Enabled = true;
+            B62.Text = "";
+            B62.Enabled = true;
+            B63.Text = "";
+            B63.Enabled = true;
+            C61.Text = "";
+            C61.Enabled = true;
+            C62.Text = "";
+            C62.Enabled = true;
+            C63.Text = "";
+            C63.Enabled = true;
+
+            A71.Text = "";
+            A71.Enabled = true;
+            A72.Text = "";
+            A72.Enabled = true;
+            A73.Text = "";
+            A73.Enabled = true;
+            B71.Text = "";
+            B71.Enabled = true;
+            B72.Text = "";
+            B72.Enabled = true;
+            B73.Text = "";
+            B73.Enabled = true;
+            C71.Text = "";
+            C71.Enabled = true;
+            C72.Text = "";
+            C72.Enabled = true;
+            C73.Text = "";
+            C73.Enabled = true;
+
+            A81.Text = "";
+            A81.Enabled = true;
+            A82.Text = "";
+            A82.Enabled = true;
+            A83.Text = "";
+            A83.Enabled = true;
+            B81.Text = "";
+            B81.Enabled = true;
+            B82.Text = "";
+            B82.Enabled = true;
+            B83.Text = "";
+            B83.Enabled = true;
+            C81.Text = "";
+            C81.Enabled = true;
+            C82.Text = "";
+            C82.Enabled = true;
+            C83.Text = "";
+            C83.Enabled = true;
+
+            A91.Text = "";
+            A91.Enabled = true;
+            A92.Text = "";
+            A92.Enabled = true;
+            A93.Text = "";
+            A93.Enabled = true;
+            B91.Text = "";
+            B91.Enabled = true;
+            B92.Text = "";
+            B92.Enabled = true;
+            B93.Text = "";
+            B93.Enabled = true;
+            C91.Text = "";
+            C91.Enabled = true;
+            C92.Text = "";
+            C92.Enabled = true;
+            C93.Text = "";
+            C93.Enabled = true;
+
 
             //Set Values Back To False
             X.A11 = false;
@@ -1040,25 +1189,25 @@ namespace Tic_Tac_Toe
             O.C92 = false;
             O.C93 = false;
 
-            bool Square1DoneX = false;
-            bool Square2DoneX = false;
-            bool Square3DoneX = false;
-            bool Square4DoneX = false;
-            bool Square5DoneX = false;
-            bool Square6DoneX = false;
-            bool Square7DoneX = false;
-            bool Square8DoneX = false;
-            bool Square9DoneX = false;
+             Square1DoneX = false;
+             Square2DoneX = false;
+             Square3DoneX = false;
+             Square4DoneX = false;
+             Square5DoneX = false;
+             Square6DoneX = false;
+             Square7DoneX = false;
+             Square8DoneX = false;
+             Square9DoneX = false;
 
-            bool Square1DoneO = false;
-            bool Square2DoneO = false;
-            bool Square3DoneO = false;
-            bool Square4DoneO = false;
-            bool Square5DoneO = false;
-            bool Square6DoneO = false;
-            bool Square7DoneO = false;
-            bool Square8DoneO = false;
-            bool Square9DoneO = false;
+             Square1DoneO = false;
+             Square2DoneO = false;
+             Square3DoneO = false;
+             Square4DoneO = false;
+             Square5DoneO = false;
+             Square6DoneO = false;
+             Square7DoneO = false;
+             Square8DoneO = false;
+             Square9DoneO = false;
         }
        
 
