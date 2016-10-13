@@ -12,9 +12,9 @@ using System.Windows.Forms;
 //Things to do
 
 //Make A Function To Choose What Square To Make The Player Play In
-//Set The Bools When The Squares Are Done, And Set All Of That Section To The Winning Letter
-//Figure Out How To Restore Sections And ReDisabled the Already Clicked Buttons
 //Configer The Reset Squares Function
+//Configer The New Game Function
+
 
 
 
@@ -70,6 +70,9 @@ namespace Tic_Tac_Toe
                     }
                     break;
                 case 1:
+                    //Example Of How To Whitelist Some of The Squares
+                    if (!Square1DoneX && !Square1DoneO)
+                    {
                     A11.Enabled = true;
                     A12.Enabled = true;
                     A13.Enabled = true;
@@ -79,9 +82,13 @@ namespace Tic_Tac_Toe
                     C11.Enabled = true;
                     C12.Enabled = true;
                     C13.Enabled = true;
+                    }
+                  
 
                     break;
                 case 2:
+                    if (!Square2DoneO && !Square2DoneX)
+                    {
                     A21.Enabled = true;
                     A22.Enabled = true;
                     A23.Enabled = true;
@@ -91,9 +98,12 @@ namespace Tic_Tac_Toe
                     C21.Enabled = true;
                     C22.Enabled = true;
                     C23.Enabled = true;
+                    }
+                    
                     break;
                 case 3:
-                    A31.Enabled = true;
+                    if (!Square3DoneO && !Square3DoneX)
+                    { A31.Enabled = true;
                     A32.Enabled = true;
                     A33.Enabled = true;
                     B31.Enabled = true;
@@ -102,9 +112,12 @@ namespace Tic_Tac_Toe
                     C31.Enabled = true;
                     C32.Enabled = true;
                     C33.Enabled = true;
+                    }
+                   
                     break;
                 case 4:
-                    A41.Enabled = true;
+                    if (!Square4DoneO && !Square4DoneX)
+                    {A41.Enabled = true;
                     A42.Enabled = true;
                     A43.Enabled = true;
                     B41.Enabled = true;
@@ -113,9 +126,12 @@ namespace Tic_Tac_Toe
                     C41.Enabled = true;
                     C42.Enabled = true;
                     C43.Enabled = true;
+                    }
+                    
                     break;
                 case 5:
-                    A51.Enabled = true;
+                    if (!Square5DoneO && !Square5DoneX)
+                    { A51.Enabled = true;
                     A52.Enabled = true;
                     A53.Enabled = true;
                     B51.Enabled = true;
@@ -124,9 +140,12 @@ namespace Tic_Tac_Toe
                     C51.Enabled = true;
                     C52.Enabled = true;
                     C53.Enabled = true;
+                    }
+                   
                     break;
                 case 6:
-                    A61.Enabled = true;
+                    if (!Square6DoneO && !Square6DoneX)
+                    {A61.Enabled = true;
                     A62.Enabled = true;
                     A63.Enabled = true;
                     B61.Enabled = true;
@@ -135,9 +154,12 @@ namespace Tic_Tac_Toe
                     C61.Enabled = true;
                     C62.Enabled = true;
                     C63.Enabled = true;
+                    }
+                    
                     break;
                 case 7:
-                    A71.Enabled = true;
+                    if (!Square7DoneO && !Square7DoneX)
+                    { A71.Enabled = true;
                     A72.Enabled = true;
                     A73.Enabled = true;
                     B71.Enabled = true;
@@ -146,9 +168,12 @@ namespace Tic_Tac_Toe
                     C71.Enabled = true;
                     C72.Enabled = true;
                     C73.Enabled = true;
+                    }
+                   
                     break;
                 case 8:
-                    A81.Enabled = true;
+                    if (!Square8DoneO && !Square8DoneX)
+                    {A81.Enabled = true;
                     A82.Enabled = true;
                     A83.Enabled = true;
                     B81.Enabled = true;
@@ -157,9 +182,12 @@ namespace Tic_Tac_Toe
                     C81.Enabled = true;
                     C82.Enabled = true;
                     C83.Enabled = true;
+                    }
+                    
                     break;
                 case 9:
-                    A91.Enabled = true;
+                    if (!Square9DoneO && !Square9DoneX)
+                    {  A91.Enabled = true;
                     A92.Enabled = true;
                     A93.Enabled = true;
                     B91.Enabled = true;
@@ -168,6 +196,8 @@ namespace Tic_Tac_Toe
                     C91.Enabled = true;
                     C92.Enabled = true;
                     C93.Enabled = true;
+                    }
+                  
                     break;
                 default:
                     break;
@@ -894,6 +924,26 @@ namespace Tic_Tac_Toe
             O.C91 = false;
             O.C92 = false;
             O.C93 = false;
+
+            bool Square1DoneX = false;
+            bool Square2DoneX = false;
+            bool Square3DoneX = false;
+            bool Square4DoneX = false;
+            bool Square5DoneX = false;
+            bool Square6DoneX = false;
+            bool Square7DoneX = false;
+            bool Square8DoneX = false;
+            bool Square9DoneX = false;
+
+            bool Square1DoneO = false;
+            bool Square2DoneO = false;
+            bool Square3DoneO = false;
+            bool Square4DoneO = false;
+            bool Square5DoneO = false;
+            bool Square6DoneO = false;
+            bool Square7DoneO = false;
+            bool Square8DoneO = false;
+            bool Square9DoneO = false;
         }
        
 
