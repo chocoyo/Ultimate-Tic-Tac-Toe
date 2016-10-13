@@ -83,6 +83,19 @@ namespace Tic_Tac_Toe
                     C12.Enabled = true;
                     C13.Enabled = true;
                     }
+                    else
+                    {
+
+                        UnBlankSquares(2);
+                        UnBlankSquares(3);
+                        UnBlankSquares(4);
+                        UnBlankSquares(5);
+                        UnBlankSquares(6);
+                        UnBlankSquares(7);
+                        UnBlankSquares(8);
+                        UnBlankSquares(9);
+                    }
+                    
                   
 
                     break;
@@ -98,8 +111,21 @@ namespace Tic_Tac_Toe
                     C21.Enabled = true;
                     C22.Enabled = true;
                     C23.Enabled = true;
+
                     }
+                    else
+                    {
+                        UnBlankSquares(1);
                     
+                        UnBlankSquares(3);
+                        UnBlankSquares(4);
+                        UnBlankSquares(5);
+                        UnBlankSquares(6);
+                        UnBlankSquares(7);
+                        UnBlankSquares(8);
+                        UnBlankSquares(9);
+                    }
+
                     break;
                 case 3:
                     if (!Square3DoneO && !Square3DoneX)
@@ -113,7 +139,18 @@ namespace Tic_Tac_Toe
                     C32.Enabled = true;
                     C33.Enabled = true;
                     }
-                   
+                    else
+                    {
+                        UnBlankSquares(1);
+                        UnBlankSquares(2);
+                     
+                        UnBlankSquares(4);
+                        UnBlankSquares(5);
+                        UnBlankSquares(6);
+                        UnBlankSquares(7);
+                        UnBlankSquares(8);
+                        UnBlankSquares(9);
+                    }
                     break;
                 case 4:
                     if (!Square4DoneO && !Square4DoneX)
@@ -127,7 +164,18 @@ namespace Tic_Tac_Toe
                     C42.Enabled = true;
                     C43.Enabled = true;
                     }
-                    
+                    else
+                    {
+                        UnBlankSquares(1);
+                        UnBlankSquares(2);
+                        UnBlankSquares(3);
+                     
+                        UnBlankSquares(5);
+                        UnBlankSquares(6);
+                        UnBlankSquares(7);
+                        UnBlankSquares(8);
+                        UnBlankSquares(9);
+                    }
                     break;
                 case 5:
                     if (!Square5DoneO && !Square5DoneX)
@@ -141,7 +189,18 @@ namespace Tic_Tac_Toe
                     C52.Enabled = true;
                     C53.Enabled = true;
                     }
-                   
+                    else
+                    {
+                        UnBlankSquares(1);
+                        UnBlankSquares(2);
+                        UnBlankSquares(3);
+                        UnBlankSquares(4);
+                     
+                        UnBlankSquares(6);
+                        UnBlankSquares(7);
+                        UnBlankSquares(8);
+                        UnBlankSquares(9);
+                    }
                     break;
                 case 6:
                     if (!Square6DoneO && !Square6DoneX)
@@ -155,7 +214,18 @@ namespace Tic_Tac_Toe
                     C62.Enabled = true;
                     C63.Enabled = true;
                     }
-                    
+                    else
+                    {
+                        UnBlankSquares(1);
+                        UnBlankSquares(2);
+                        UnBlankSquares(3);
+                        UnBlankSquares(4);
+                        UnBlankSquares(5);
+                     
+                        UnBlankSquares(7);
+                        UnBlankSquares(8);
+                        UnBlankSquares(9);
+                    }
                     break;
                 case 7:
                     if (!Square7DoneO && !Square7DoneX)
@@ -169,7 +239,18 @@ namespace Tic_Tac_Toe
                     C72.Enabled = true;
                     C73.Enabled = true;
                     }
-                   
+                    else
+                    {
+                        UnBlankSquares(1);
+                        UnBlankSquares(2);
+                        UnBlankSquares(3);
+                        UnBlankSquares(4);
+                        UnBlankSquares(5);
+                        UnBlankSquares(6);
+                     
+                        UnBlankSquares(8);
+                        UnBlankSquares(9);
+                    }
                     break;
                 case 8:
                     if (!Square8DoneO && !Square8DoneX)
@@ -183,7 +264,18 @@ namespace Tic_Tac_Toe
                     C82.Enabled = true;
                     C83.Enabled = true;
                     }
-                    
+                    else
+                    {
+                        UnBlankSquares(1);
+                        UnBlankSquares(2);
+                        UnBlankSquares(3);
+                        UnBlankSquares(4);
+                        UnBlankSquares(5);
+                        UnBlankSquares(6);
+                        UnBlankSquares(7);
+                     
+                        UnBlankSquares(9);
+                    }
                     break;
                 case 9:
                     if (!Square9DoneO && !Square9DoneX)
@@ -197,7 +289,18 @@ namespace Tic_Tac_Toe
                     C92.Enabled = true;
                     C93.Enabled = true;
                     }
-                  
+                    else
+                    {
+                        UnBlankSquares(1);
+                        UnBlankSquares(2);
+                        UnBlankSquares(3);
+                        UnBlankSquares(4);
+                        UnBlankSquares(5);
+                        UnBlankSquares(6);
+                        UnBlankSquares(7);
+                        UnBlankSquares(8);
+                     
+                    }
                     break;
                 default:
                     break;
@@ -557,7 +660,19 @@ namespace Tic_Tac_Toe
 
 
         }
-      
+
+
+        public void ForceArea(int area) {
+
+            BlankSquares(0);
+            UnBlankSquares(area);
+
+
+
+
+        }
+
+
         public int CheckAreas() {
 
             xPermutations();
@@ -952,46 +1067,55 @@ namespace Tic_Tac_Toe
         private void A1_Click(object sender, EventArgs e)
         {
             setSquare('A', 1, 1);
+            ForceArea(1);
         }
 
         private void A2_Click(object sender, EventArgs e)
         {
             setSquare('A', 1, 2);
+            ForceArea(2);
         }
 
         private void A3_Click(object sender, EventArgs e)
         {
             setSquare('A', 1, 3);
+            ForceArea(3);
         }
 
         private void B1_Click(object sender, EventArgs e)
         {
             setSquare('B', 1, 1);
+            ForceArea(4);
         }
 
         private void B2_Click(object sender, EventArgs e)
         {
             setSquare('B', 1, 2);
+            ForceArea(5);
         }
 
         private void B3_Click(object sender, EventArgs e)
         {
             setSquare('B', 1, 3);
+            ForceArea(6);
         }
 
         private void C1_Click(object sender, EventArgs e)
         {
             setSquare('C', 1, 1);
+            ForceArea(7);
         }
 
         private void C2_Click(object sender, EventArgs e)
         {
             setSquare('C', 1, 2);
+            ForceArea(8);
         }
 
         private void C3_Click(object sender, EventArgs e)
         {
             setSquare('C', 1, 3);
+            ForceArea(9);
         }
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1012,361 +1136,427 @@ namespace Tic_Tac_Toe
         private void A21_Click(object sender, EventArgs e)
         {
             setSquare('A', 2, 1);
+            ForceArea(1);
         }
 
         private void A22_Click(object sender, EventArgs e)
         {
             setSquare('A', 2, 2);
+            ForceArea(2);
         }
 
         private void A23_Click(object sender, EventArgs e)
         {
             setSquare('A', 2, 3);
+            ForceArea(3);
         }
 
         private void B21_Click(object sender, EventArgs e)
         {
             setSquare('B', 2, 1);
+            ForceArea(4);
         }
 
         private void B22_Click(object sender, EventArgs e)
         {
-            setSquare('B', 2, 2);
+            setSquare('B', 2, 2); ForceArea(5);
         }
 
         private void B23_Click(object sender, EventArgs e)
         {
             setSquare('B', 2, 3);
+            ForceArea(6);
         }
 
         private void C21_Click(object sender, EventArgs e)
         {
             setSquare('C', 2, 1);
+            ForceArea(7);
         }
 
         private void C22_Click(object sender, EventArgs e)
         {
             setSquare('C', 2, 2);
+            ForceArea(8);
         }
 
         private void C23_Click(object sender, EventArgs e)
         {
             setSquare('C', 2, 3);
+            ForceArea(9);
         }
 
         private void A31_Click(object sender, EventArgs e)
         {
             setSquare('A', 3, 1);
+            ForceArea(1);
         }
 
         private void A32_Click(object sender, EventArgs e)
         {
-            setSquare('A', 3, 2);
+            setSquare('A', 3, 2); ForceArea(2);
         }
 
         private void A33_Click(object sender, EventArgs e)
         {
             setSquare('A', 3, 3);
+            ForceArea(3);
         }
 
         private void B31_Click(object sender, EventArgs e)
         {
             setSquare('B', 3, 1);
+            ForceArea(4);
         }
 
         private void B32_Click(object sender, EventArgs e)
         {
             setSquare('B', 3, 2);
+            ForceArea(5);
         }
 
         private void B33_Click(object sender, EventArgs e)
         {
-            setSquare('B', 3, 3);
+            setSquare('B', 3, 3); ForceArea(6);
         }
 
         private void C31_Click(object sender, EventArgs e)
         {
             setSquare('C', 3, 1);
+            ForceArea(7);
         }
 
         private void C32_Click(object sender, EventArgs e)
         {
             setSquare('C', 3, 2);
+            ForceArea(8);
         }
 
         private void C33_Click(object sender, EventArgs e)
         {
             setSquare('C', 3, 3);
+            ForceArea(9);
         }
 
         private void A41_Click(object sender, EventArgs e)
         {
             setSquare('A', 4, 1);
+            ForceArea(1);
         }
 
         private void A42_Click(object sender, EventArgs e)
         {
             setSquare('A', 4, 2);
+            ForceArea(2);
         }
 
         private void A43_Click(object sender, EventArgs e)
         {
             setSquare('A', 4, 3);
+            ForceArea(3);
         }
 
         private void B41_Click(object sender, EventArgs e)
         {
             setSquare('B', 4, 1);
+            ForceArea(4);
         }
 
         private void B42_Click(object sender, EventArgs e)
         {
             setSquare('B', 4, 2);
+            ForceArea(5);
         }
 
         private void B43_Click(object sender, EventArgs e)
         {
             setSquare('B', 4, 3);
+            ForceArea(6);
         }
 
         private void C41_Click(object sender, EventArgs e)
         {
             setSquare('C', 4, 1);
+            ForceArea(7);
         }
 
         private void C42_Click(object sender, EventArgs e)
         {
             setSquare('C', 4, 2);
+            ForceArea(8);
         }
 
         private void C43_Click(object sender, EventArgs e)
         {
             setSquare('C', 4, 3);
+            ForceArea(9);
         }
 
         private void A51_Click(object sender, EventArgs e)
         {
             setSquare('A', 5, 1);
+            ForceArea(1);
         }
 
         private void A52_Click(object sender, EventArgs e)
         {
             setSquare('A', 5, 2);
+            ForceArea(2);
         }
 
         private void A53_Click(object sender, EventArgs e)
         {
-            setSquare('A', 5, 3);
+            setSquare('A', 5, 3); ForceArea(3);
         }
 
         private void B51_Click(object sender, EventArgs e)
         {
             setSquare('B', 5, 1);
+            ForceArea(4);
         }
 
         private void B52_Click(object sender, EventArgs e)
         {
             setSquare('B', 5, 2);
+            ForceArea(5);
         }
 
         private void B53_Click(object sender, EventArgs e)
         {
             setSquare('B', 5, 3);
+            ForceArea(6);
         }
 
         private void C51_Click(object sender, EventArgs e)
         {
             setSquare('C', 5, 1);
+            ForceArea(7);
         }
 
         private void C52_Click(object sender, EventArgs e)
         {
             setSquare('C', 5, 2);
+            ForceArea(8);
         }
 
         private void C53_Click(object sender, EventArgs e)
         {
             setSquare('C', 5, 3);
+            ForceArea(9);
         }
 
         private void A61_Click(object sender, EventArgs e)
         {
             setSquare('A', 6, 1);
+            ForceArea(1);
         }
 
         private void A62_Click(object sender, EventArgs e)
         {
             setSquare('A', 6, 2);
+            ForceArea(2);
         }
 
         private void A63_Click(object sender, EventArgs e)
         {
             setSquare('A', 6, 3);
+            ForceArea(3);
         }
 
         private void B61_Click(object sender, EventArgs e)
         {
             setSquare('B', 6, 1);
+            ForceArea(4);
         }
 
         private void B62_Click(object sender, EventArgs e)
         {
             setSquare('B', 6, 2);
+            ForceArea(5);
         }
 
         private void B63_Click(object sender, EventArgs e)
         {
             setSquare('B', 6, 3);
+            ForceArea(6);
         }
 
         private void C61_Click(object sender, EventArgs e)
         {
             setSquare('C', 6, 1);
+            ForceArea(7);
         }
 
         private void C62_Click(object sender, EventArgs e)
         {
             setSquare('C', 6, 2);
+            ForceArea(8);
         }
 
         private void C63_Click(object sender, EventArgs e)
         {
             setSquare('C', 6, 3);
+            ForceArea(9);
         }
 
         private void A71_Click(object sender, EventArgs e)
         {
             setSquare('A', 7, 1);
+            ForceArea(1);
         }
 
         private void A72_Click(object sender, EventArgs e)
         {
-            setSquare('A', 7, 2);
+            setSquare('A', 7, 2); ForceArea(2);
         }
 
         private void A73_Click(object sender, EventArgs e)
         {
             setSquare('A', 7, 3);
+            ForceArea(3);
         }
 
         private void B71_Click(object sender, EventArgs e)
         {
             setSquare('B', 7, 1);
+            ForceArea(4);
         }
 
         private void B72_Click(object sender, EventArgs e)
         {
             setSquare('B', 7, 2);
+            ForceArea(5);
         }
 
         private void B73_Click(object sender, EventArgs e)
         {
             setSquare('B', 7, 3);
+            ForceArea(6);
         }
 
         private void C71_Click(object sender, EventArgs e)
         {
             setSquare('C', 7, 1);
+            ForceArea(7);
         }
 
         private void C72_Click(object sender, EventArgs e)
         {
             setSquare('C', 7, 2);
+            ForceArea(8);
         }
 
         private void C73_Click(object sender, EventArgs e)
         {
             setSquare('C', 7, 3);
+            ForceArea(9);
         }
 
         private void A81_Click(object sender, EventArgs e)
         {
             setSquare('A', 8, 1);
+            ForceArea(1);
         }
 
         private void A82_Click(object sender, EventArgs e)
         {
             setSquare('A', 8, 2);
+            ForceArea(2);
         }
 
         private void A83_Click(object sender, EventArgs e)
         {
             setSquare('A', 8, 3);
+            ForceArea(3);
         }
 
         private void B81_Click(object sender, EventArgs e)
         {
             setSquare('B', 8, 1);
+            ForceArea(4);
         }
 
         private void B82_Click(object sender, EventArgs e)
         {
             setSquare('B', 8, 2);
+            ForceArea(5);
         }
 
         private void B83_Click(object sender, EventArgs e)
         {
             setSquare('B', 8, 3);
+            ForceArea(6);
         }
 
         private void C81_Click(object sender, EventArgs e)
         {
-            setSquare('C', 8, 1);
+            setSquare('C', 8, 1); ForceArea(7);
         }
 
         private void C82_Click(object sender, EventArgs e)
         {
             setSquare('C', 8, 2);
+            ForceArea(8);
         }
 
         private void C83_Click(object sender, EventArgs e)
         {
             setSquare('C', 8, 3);
+            ForceArea(9);
         }
 
         private void A91_Click(object sender, EventArgs e)
         {
             setSquare('A', 9, 1);
+            ForceArea(1);
         }
 
         private void A92_Click(object sender, EventArgs e)
         {
             setSquare('A', 9, 2);
+            ForceArea(2);
         }
 
         private void A93_Click(object sender, EventArgs e)
         {
             setSquare('A', 9, 3);
+            ForceArea(3);
         }
 
         private void B91_Click(object sender, EventArgs e)
         {
             setSquare('B', 9, 1);
+            ForceArea(4);
         }
 
         private void B92_Click(object sender, EventArgs e)
         {
             setSquare('B', 9, 2);
+            ForceArea(5);
         }
 
         private void B93_Click(object sender, EventArgs e)
         {
             setSquare('B', 9, 3);
+            ForceArea(6);
         }
 
         private void C91_Click(object sender, EventArgs e)
         {
             setSquare('C', 9, 1);
+            ForceArea(7);
         }
 
         private void C92_Click(object sender, EventArgs e)
         {
             setSquare('C', 9, 2);
+            ForceArea(8);
         }
 
         private void C93_Click(object sender, EventArgs e)
         {
             setSquare('C', 9, 3);
+            ForceArea(9);
         }
     }
 }
