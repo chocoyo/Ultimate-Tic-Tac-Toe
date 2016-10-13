@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 //Fix The Highlighting Problem
 //Fix Crash Where the second time using the unblank wildcard
+//      Crashes When There Is 2 Differnt Squares The Are Being WildCarded At The Same Time
 
 
 
@@ -663,6 +664,7 @@ namespace Tic_Tac_Toe
 
         public void ForceArea(int area) {
 
+            //Maybe i should unblnaked all buttons and then blank the things i need to
             BlankSquares(0);
             UnBlankSquares(area);
 
