@@ -8,9 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//THIS IS THE SEPERATE FILES BRANCH
-
-
 
 //Things to do
 
@@ -451,183 +448,7 @@ namespace Tic_Tac_Toe
         }
        
 
-        public void setSquare(char Letter, int Number, int Number2)
-        {
-            if (turn == 'X')
-            {
-                switch (Letter)
-                {
-                    case 'A':
-                        switch (Number2)
-                        {
-                            case 1:
-                                A11.Text = "X";
-                                A11.Enabled = false;
-                                X.A11 = true;
-                                turn = 'O';
-                                break;
-                            case 2:
-                                A12.Text = "X";
-                                A12.Enabled = false;
-                                X.A12 = true;
-                                turn = 'O';
-                                break;
-                            case 3:
-                                A13.Text = "X";
-                                A13.Enabled = false;
-                                X.A13 = true;
-                                turn = 'O';
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    case 'B':
-                        switch (Number2)
-                        {
-                            case 1:
-                                B11.Text = "X";
-                                B11.Enabled = false;
-                                X.B11 = true;
-                                turn = 'O';
-                                break;
-                            case 2:
-                                B12.Text = "X";
-                                B12.Enabled = false;
-                                X.B12 = true;
-                                turn = 'O';
-                                break;
-                            case 3:
-                                B13.Text = "X";
-                                B13.Enabled = false;
-                                X.B13 = true;
-                                turn = 'O';
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    case 'C':
-                        switch (Number2)
-                        {
-                            case 1:
-                                C11.Text = "X";
-                                C11.Enabled = false;
-                                X.C11 = true;
-                                turn = 'O';
-                                break;
-                            case 2:
-                                C12.Text = "X";
-                                C12.Enabled = false;
-                                X.C12 = true;
-                                turn = 'O';
-                                break;
-                            case 3:
-                                C13.Text = "X";
-                                C13.Enabled = false;
-                                X.C13 = true;
-                                turn = 'O';
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                        
-                    default:
-                        break;
-                }
-                
-            }
-            else if (turn == 'O')
-            {
-                switch (Letter)
-                {
-                    case 'A':
-                        switch (Number2)
-                        {
-                            case 1:
-                                A11.Text = "O";
-                                A11.Enabled = false;
-                                O.A11 = true;
-                                turn = 'X';
-                                break;
-                            case 2:
-                                A12.Text = "O";
-                                A12.Enabled = false;
-                                O.A12 = true;
-                                turn = 'X';
-                                break;
-                            case 3:
-                                A13.Text = "O";
-                                A13.Enabled = false;
-                                O.A13 = true;
-                                turn = 'X';
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    case 'B':
-                        switch (Number2)
-                        {
-                            case 1:
-                                B11.Text = "O";
-                                B11.Enabled = false;
-                                O.B11 = true;
-                                turn = 'X';
-                                break;
-                            case 2:
-                                B12.Text = "O";
-                                B12.Enabled = false;
-                                O.B12 = true;
-                                turn = 'X';
-                                break;
-                            case 3:
-                                B13.Text = "O";
-                                B13.Enabled = false;
-                                O.B13 = true;
-                                turn = 'X';
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    case 'C':
-                        switch (Number2)
-                        {
-                            case 1:
-                                C11.Text = "O";
-                                C11.Enabled = false;
-                                O.C11 = true;
-                                turn = 'X';
-                                break;
-                            case 2:
-                                C12.Text = "O";
-                                C12.Enabled = false;
-                                O.C12 = true;
-                                turn = 'X';
-                                break;
-                            case 3:
-                                C13.Text = "O";
-                                C13.Enabled = false;
-                                O.C13 = true;
-                                turn = 'X';
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-
-                    default:
-                        break;
-                }
-                
-            }
-            plays++;
-            ifFinnish();
-            CheckWin();
-
-         }
+        
 
         private void A1_Click(object sender, EventArgs e)
         {
@@ -687,6 +508,11 @@ namespace Tic_Tac_Toe
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This Is A Tic Tac Toe Game. Made By Mike Hodges");
+        }
+
+        private void A21_Click(object sender, EventArgs e)
+        {
+            setSquare('A', 2, 1);
         }
     }
 }

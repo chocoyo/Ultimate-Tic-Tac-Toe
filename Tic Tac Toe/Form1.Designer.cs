@@ -337,6 +337,7 @@
             this.A21.Size = new System.Drawing.Size(66, 60);
             this.A21.TabIndex = 11;
             this.A21.UseVisualStyleBackColor = true;
+            this.A21.Click += new System.EventHandler(this.A21_Click);
             // 
             // A32
             // 
