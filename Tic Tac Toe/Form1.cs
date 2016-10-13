@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 //Things to do
 
-//Make The Program Know Who Won XD
-//      Find And Replace "Done" With "Donex" and do the same thing for o. Then Change The Check Areas Function
 //Make A Function To Choose What Square To Make The Player Play In
 //Set The Bools When The Squares Are Done, And Set All Of That Section To The Winning Letter
 //Figure Out How To Restore Sections And ReDisabled the Already Clicked Buttons
+//Configer The Reset Squares Function
+//Make The Set Text Function
 
 
 
@@ -38,15 +38,25 @@ namespace Tic_Tac_Toe
         int plays = 0;
         Squares X = new Squares();
         Squares O = new Squares();
-        bool Square1Done = false;
-        bool Square2Done = false;
-        bool Square3Done = false;
-        bool Square4Done = false;
-        bool Square5Done = false;
-        bool Square6Done = false;
-        bool Square7Done = false;
-        bool Square8Done = false;
-        bool Square9Done = false;
+        bool Square1DoneX = false;
+        bool Square2DoneX = false;
+        bool Square3DoneX = false;
+        bool Square4DoneX = false;
+        bool Square5DoneX = false;
+        bool Square6DoneX = false;
+        bool Square7DoneX = false;
+        bool Square8DoneX = false;
+        bool Square9DoneX = false;
+
+        bool Square1DoneO = false;
+        bool Square2DoneO = false;
+        bool Square3DoneO = false;
+        bool Square4DoneO = false;
+        bool Square5DoneO = false;
+        bool Square6DoneO = false;
+        bool Square7DoneO = false;
+        bool Square8DoneO = false;
+        bool Square9DoneO = false;
 
 
 
@@ -289,54 +299,143 @@ namespace Tic_Tac_Toe
 
 
         }
+
+
+
+        public void SetText(int area, char team) {
+
+            if (team == 'X')
+            {
+
+                switch (area)
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    case 8:
+                        break;
+                    case 9:
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            if (team == 'O')
+            {
+                switch (area)
+                {
+                    case 1:
+                        A11.Text = "X";
+                        A12.Text = "X";
+                        A13.Text = "X";
+                        B11.Text = "X";
+                        B12.Text = "X";
+                        B13.Text = "X";
+                        C11.Text = "X";
+                        C12.Text = "X";
+                        C13.Text = "X";
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    case 8:
+                        break;
+                    case 9:
+                        break;
+
+                    default:
+                        break;
+                }
+
+
+
+
+            }
+
+
+        }
       
         public int CheckAreas() {
 
             xPermutations();
             oPermutations();
-            if (Square1Done)
+            if (Square1DoneX || Square1DoneO)
             {
                 BlankSquares(1);
+                if (Square1DoneX)
+                {
+                    SetText(1, 'X');
+                }
+                else
+                {
+                    SetText(1, 'O');
+                }
+                
             }
 
-            if (Square2Done)
+            if (Square2DoneX || Square2DoneO)
             {
                 BlankSquares(2);
+                
             }
-            if (Square3Done)
+            if (Square3DoneX || Square3DoneO)
             {
                 BlankSquares(3);
             }
-            if (Square4Done)
+            if (Square4DoneX || Square4DoneO)
             {
                 BlankSquares(4);
             }
-            if (Square5Done)
+            if (Square5DoneX || Square5DoneO)
             {
                 BlankSquares(5);
             }
-            if (Square6Done)
+            if (Square6DoneX || Square6DoneO)
             {
                 BlankSquares(6);
             }
-            if (Square7Done)
+            if (Square7DoneX || Square7DoneO)
             {
                 BlankSquares(7);
             }
-            if (Square8Done)
+            if (Square8DoneX || Square8DoneO)
             {
                 BlankSquares(8);
             }
-            if (Square9Done)
+            if (Square9DoneX || Square9DoneO)
             {
                 BlankSquares(9);
             }
 
-            if (UltimatePermutaions() == 1)
+            if (UltimatePermutaionsX() == 1)
             {
-                return 3;
+                return 1;
             }
-
+            if (UltimatePermutaionsO() == 1)
+            {
+                return 2;
+            }
             return 100;
             
         }
@@ -634,7 +733,7 @@ namespace Tic_Tac_Toe
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This Is A Tic Tac Toe Game. Made By Mike Hodges");
+            MessageBox.Show("This Is A ULTIMATE Tic Tac Toe Game. Made By Mike Hodges");
         }
 
         private void A21_Click(object sender, EventArgs e)
