@@ -14,6 +14,7 @@ using System.Windows.Forms;
 //Fix The Highlighting Problem
 //Fix Crash Where the second time using the unblank wildcard
 //      Crashes When There Is 2 Differnt Squares The Are Being WildCarded At The Same Time
+//      To Fix Lets Make A "Wildcard" Function
 
 
 
@@ -57,8 +58,18 @@ namespace Tic_Tac_Toe
         bool Square8DoneO = false;
         bool Square9DoneO = false;
 
+        public void Wildcard() {
+
+            if (!Square1DoneO && !Square1DoneX)
+            {
+                UnBlankSquares(1);
+            }
 
 
+
+
+
+        }
         public void UnBlankSquares(int area) {
 
             switch (area)
@@ -85,7 +96,6 @@ namespace Tic_Tac_Toe
                     }
                     else
                     {
-
                         UnBlankSquares(2);
                         UnBlankSquares(3);
                         UnBlankSquares(4);
@@ -309,11 +319,6 @@ namespace Tic_Tac_Toe
 
         }
 
-        public void ifFinnish()
-        {
-            //a way to tell if no one won
-
-        }
 
         public void BlankSquares(int area) {
 
