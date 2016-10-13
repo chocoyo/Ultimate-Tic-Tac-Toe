@@ -12,8 +12,7 @@ using System.Windows.Forms;
 //Things to do
 
 //Fix The Highlighting Problem
-//Configer The Reset Squares Function
-//Configer The New Game Function
+//Fix Crash Where the second time using the unblank wildcard
 
 
 
