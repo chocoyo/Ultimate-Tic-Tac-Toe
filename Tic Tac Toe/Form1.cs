@@ -12,9 +12,6 @@ using System.Windows.Forms;
 //Things to do
 
 //Fix The Highlighting Problem
-//Fix Crash Where the second time using the unblank wildcard
-//      Crashes When There Is 2 Differnt Squares The Are Being WildCarded At The Same Time
-//      To Fix Lets Make A "Wildcard" Function
 
 
 
@@ -65,9 +62,40 @@ namespace Tic_Tac_Toe
                 UnBlankSquares(1);
             }
 
+            if (!Square2DoneO && !Square2DoneX)
+            {
+                UnBlankSquares(2);
+            }
 
+            if (!Square3DoneO && !Square3DoneX)
+            {
+                UnBlankSquares(3);
+            }
 
-
+            if (!Square4DoneO && !Square4DoneX)
+            {
+                UnBlankSquares(4);
+            }
+            if (!Square5DoneO && !Square5DoneX)
+            {
+                UnBlankSquares(5);
+            }
+            if (!Square6DoneO && !Square6DoneX)
+            {
+                UnBlankSquares(6);
+            }
+            if (!Square7DoneO && !Square7DoneX)
+            {
+                UnBlankSquares(7);
+            }
+            if (!Square8DoneO && !Square8DoneX)
+            {
+                UnBlankSquares(8);
+            }
+            if (!Square9DoneO && !Square9DoneX)
+            {
+                UnBlankSquares(9);
+            }
 
         }
         public void UnBlankSquares(int area) {
@@ -96,14 +124,15 @@ namespace Tic_Tac_Toe
                     }
                     else
                     {
-                        UnBlankSquares(2);
-                        UnBlankSquares(3);
-                        UnBlankSquares(4);
-                        UnBlankSquares(5);
-                        UnBlankSquares(6);
-                        UnBlankSquares(7);
-                        UnBlankSquares(8);
-                        UnBlankSquares(9);
+                        Wildcard();
+                        //UnBlankSquares(2);
+                        //UnBlankSquares(3);
+                        //UnBlankSquares(4);
+                        //UnBlankSquares(5);
+                        //UnBlankSquares(6);
+                        //UnBlankSquares(7);
+                        //UnBlankSquares(8);
+                        //UnBlankSquares(9);
                     }
                     
                   
@@ -125,15 +154,7 @@ namespace Tic_Tac_Toe
                     }
                     else
                     {
-                        UnBlankSquares(1);
-                    
-                        UnBlankSquares(3);
-                        UnBlankSquares(4);
-                        UnBlankSquares(5);
-                        UnBlankSquares(6);
-                        UnBlankSquares(7);
-                        UnBlankSquares(8);
-                        UnBlankSquares(9);
+                        Wildcard();
                     }
 
                     break;
@@ -151,15 +172,7 @@ namespace Tic_Tac_Toe
                     }
                     else
                     {
-                        UnBlankSquares(1);
-                        UnBlankSquares(2);
-                     
-                        UnBlankSquares(4);
-                        UnBlankSquares(5);
-                        UnBlankSquares(6);
-                        UnBlankSquares(7);
-                        UnBlankSquares(8);
-                        UnBlankSquares(9);
+                        Wildcard();
                     }
                     break;
                 case 4:
@@ -176,15 +189,7 @@ namespace Tic_Tac_Toe
                     }
                     else
                     {
-                        UnBlankSquares(1);
-                        UnBlankSquares(2);
-                        UnBlankSquares(3);
-                     
-                        UnBlankSquares(5);
-                        UnBlankSquares(6);
-                        UnBlankSquares(7);
-                        UnBlankSquares(8);
-                        UnBlankSquares(9);
+                        Wildcard();
                     }
                     break;
                 case 5:
@@ -201,15 +206,7 @@ namespace Tic_Tac_Toe
                     }
                     else
                     {
-                        UnBlankSquares(1);
-                        UnBlankSquares(2);
-                        UnBlankSquares(3);
-                        UnBlankSquares(4);
-                     
-                        UnBlankSquares(6);
-                        UnBlankSquares(7);
-                        UnBlankSquares(8);
-                        UnBlankSquares(9);
+                        Wildcard();
                     }
                     break;
                 case 6:
@@ -226,15 +223,7 @@ namespace Tic_Tac_Toe
                     }
                     else
                     {
-                        UnBlankSquares(1);
-                        UnBlankSquares(2);
-                        UnBlankSquares(3);
-                        UnBlankSquares(4);
-                        UnBlankSquares(5);
-                     
-                        UnBlankSquares(7);
-                        UnBlankSquares(8);
-                        UnBlankSquares(9);
+                        Wildcard();
                     }
                     break;
                 case 7:
@@ -251,15 +240,7 @@ namespace Tic_Tac_Toe
                     }
                     else
                     {
-                        UnBlankSquares(1);
-                        UnBlankSquares(2);
-                        UnBlankSquares(3);
-                        UnBlankSquares(4);
-                        UnBlankSquares(5);
-                        UnBlankSquares(6);
-                     
-                        UnBlankSquares(8);
-                        UnBlankSquares(9);
+                        Wildcard();
                     }
                     break;
                 case 8:
@@ -276,15 +257,7 @@ namespace Tic_Tac_Toe
                     }
                     else
                     {
-                        UnBlankSquares(1);
-                        UnBlankSquares(2);
-                        UnBlankSquares(3);
-                        UnBlankSquares(4);
-                        UnBlankSquares(5);
-                        UnBlankSquares(6);
-                        UnBlankSquares(7);
-                     
-                        UnBlankSquares(9);
+                        Wildcard();
                     }
                     break;
                 case 9:
@@ -301,15 +274,8 @@ namespace Tic_Tac_Toe
                     }
                     else
                     {
-                        UnBlankSquares(1);
-                        UnBlankSquares(2);
-                        UnBlankSquares(3);
-                        UnBlankSquares(4);
-                        UnBlankSquares(5);
-                        UnBlankSquares(6);
-                        UnBlankSquares(7);
-                        UnBlankSquares(8);
-                     
+                        Wildcard();
+
                     }
                     break;
                 default:

@@ -1531,7 +1531,6 @@ namespace Tic_Tac_Toe
 
             }
             plays++;
-            ifFinnish();
             CheckWin();
 
         }
