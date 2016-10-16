@@ -27,8 +27,30 @@ namespace Tic_Tac_Toe
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("X Goes First Rn :)");
+            //MessageBox.Show("X Goes First Rn :)");
+            CoinFlip();
+
         }
+
+        public void CoinFlip() {
+            MessageBox.Show("Roll To See If You Get To Go First", "Tic Tac Toe", MessageBoxButtons.OK);
+
+            Random rnd = new Random();
+            int Rannum = rnd.Next(0, 2);
+
+            if (Rannum == 1)
+            {
+                MessageBox.Show("You Go Last");
+            }
+            else
+            {
+                MessageBox.Show("You Go First");
+            }
+
+
+
+        }
+
 
         //Declarations
         char turn = 'X';
@@ -98,6 +120,7 @@ namespace Tic_Tac_Toe
             }
 
         }
+
         public void UnBlankSquares(int area) {
 
             switch (area)
