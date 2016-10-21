@@ -1527,17 +1527,17 @@ namespace Tic_Tac_Toe
             ForceArea(9);
         }
 
-        private void newGameToolStripMenu8tem_Click(object sender, EventArgs e)
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewGame();
         }
 
-        private void exitToolStripMenu8tem_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void aboutToolStripMenu8tem_Click(object sender, EventArgs e)
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This Is A ULTIMATE Tic Tac Toe Game. Made By Mike Hodges");
         }
@@ -1967,5 +1967,7 @@ namespace Tic_Tac_Toe
             setSquare('C', 9, 3);
             ForceArea(9);
         }
+
+        
     }
 }
