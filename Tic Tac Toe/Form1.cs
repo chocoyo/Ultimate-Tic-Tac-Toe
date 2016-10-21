@@ -116,15 +116,45 @@ namespace Tic_Tac_Toe
                     //Example Of How To Whitelist Some of The Squares
                     if (!Square1DoneX && !Square1DoneO)
                     {
-                    A11.Enabled = true;
-                    A12.Enabled = true;
-                    A13.Enabled = true;
-                    B11.Enabled = true;
-                    B12.Enabled = true;
-                    B13.Enabled = true;
-                    C11.Enabled = true;
-                    C12.Enabled = true;
-                    C13.Enabled = true;
+                        //Whitelist The Squares Within The Squares
+                        if (!X.A11 && !O.A11)
+                        {
+                            A11.Enabled = true;
+                        }
+
+                        if (!X.A12 && !O.A12)
+                        {
+                            A12.Enabled = true;
+                        }
+
+                        if (!X.A13 && !O.A13)
+                        {
+                            A13.Enabled = true;
+                        }
+                        if (!X.B11 && !O.B11)
+                        {
+                            B11.Enabled = true;
+                        }
+                        if (!X.B12 && !O.B12)
+                        {
+                            B12.Enabled = true;
+                        }
+                        if (!X.B13 && !O.B13)
+                        {
+                            B13.Enabled = true;
+                        }
+                        if (!X.C11 && !O.C11)
+                        {
+                            C11.Enabled = true;
+                        }
+                        if (!X.C12 && !O.C12)
+                        {
+                            C12.Enabled = true;
+                        }
+                        if (!X.C13 && !O.C13)
+                        {
+                            C13.Enabled = true;
+                        }
                     }
                     else
                     {
@@ -145,15 +175,44 @@ namespace Tic_Tac_Toe
                 case 2:
                     if (!Square2DoneO && !Square2DoneX)
                     {
-                    A21.Enabled = true;
-                    A22.Enabled = true;
-                    A23.Enabled = true;
-                    B21.Enabled = true;
-                    B22.Enabled = true;
-                    B23.Enabled = true;
-                    C21.Enabled = true;
-                    C22.Enabled = true;
-                    C23.Enabled = true;
+                        if (!X.A21 && !O.A21)
+                        {
+                            A21.Enabled = true;
+                        }
+
+                        if (!X.A22 && !O.A22)
+                        {
+                            A22.Enabled = true;
+                        }
+
+                        if (!X.A23 && !O.A23)
+                        {
+                            A23.Enabled = true;
+                        }
+                        if (!X.B21 && !O.B21)
+                        {
+                            B21.Enabled = true;
+                        }
+                        if (!X.B22 && !O.B22)
+                        {
+                            B22.Enabled = true;
+                        }
+                        if (!X.B23 && !O.B23)
+                        {
+                            B23.Enabled = true;
+                        }
+                        if (!X.C21 && !O.C21)
+                        {
+                            C21.Enabled = true;
+                        }
+                        if (!X.C22 && !O.C22)
+                        {
+                            C22.Enabled = true;
+                        }
+                        if (!X.C23 && !O.C23)
+                        {
+                            C23.Enabled = true;
+                        }
 
                     }
                     else
@@ -164,15 +223,45 @@ namespace Tic_Tac_Toe
                     break;
                 case 3:
                     if (!Square3DoneO && !Square3DoneX)
-                    { A31.Enabled = true;
-                    A32.Enabled = true;
-                    A33.Enabled = true;
-                    B31.Enabled = true;
-                    B32.Enabled = true;
-                    B33.Enabled = true;
-                    C31.Enabled = true;
-                    C32.Enabled = true;
-                    C33.Enabled = true;
+                    {
+                        if (!X.A31 && !O.A31)
+                        {
+                            A31.Enabled = true;
+                        }
+
+                        if (!X.A32 && !O.A32)
+                        {
+                            A32.Enabled = true;
+                        }
+
+                        if (!X.A33 && !O.A33)
+                        {
+                            A33.Enabled = true;
+                        }
+                        if (!X.B31 && !O.B31)
+                        {
+                            B31.Enabled = true;
+                        }
+                        if (!X.B32 && !O.B32)
+                        {
+                            B32.Enabled = true;
+                        }
+                        if (!X.B33 && !O.B33)
+                        {
+                            B33.Enabled = true;
+                        }
+                        if (!X.C31 && !O.C31)
+                        {
+                            C31.Enabled = true;
+                        }
+                        if (!X.C32 && !O.C32)
+                        {
+                            C32.Enabled = true;
+                        }
+                        if (!X.C33 && !O.C33)
+                        {
+                            C33.Enabled = true;
+                        }
                     }
                     else
                     {
@@ -181,15 +270,45 @@ namespace Tic_Tac_Toe
                     break;
                 case 4:
                     if (!Square4DoneO && !Square4DoneX)
-                    {A41.Enabled = true;
-                    A42.Enabled = true;
-                    A43.Enabled = true;
-                    B41.Enabled = true;
-                    B42.Enabled = true;
-                    B43.Enabled = true;
-                    C41.Enabled = true;
-                    C42.Enabled = true;
-                    C43.Enabled = true;
+                    {
+                        if (!X.A41 && !O.A41)
+                        {
+                            A41.Enabled = true;
+                        }
+
+                        if (!X.A42 && !O.A42)
+                        {
+                            A42.Enabled = true;
+                        }
+
+                        if (!X.A43 && !O.A43)
+                        {
+                            A43.Enabled = true;
+                        }
+                        if (!X.B41 && !O.B41)
+                        {
+                            B41.Enabled = true;
+                        }
+                        if (!X.B42 && !O.B42)
+                        {
+                            B42.Enabled = true;
+                        }
+                        if (!X.B43 && !O.B43)
+                        {
+                            B43.Enabled = true;
+                        }
+                        if (!X.C41 && !O.C41)
+                        {
+                            C41.Enabled = true;
+                        }
+                        if (!X.C42 && !O.C42)
+                        {
+                            C42.Enabled = true;
+                        }
+                        if (!X.C43 && !O.C43)
+                        {
+                            C43.Enabled = true;
+                        }
                     }
                     else
                     {
@@ -198,15 +317,45 @@ namespace Tic_Tac_Toe
                     break;
                 case 5:
                     if (!Square5DoneO && !Square5DoneX)
-                    { A51.Enabled = true;
-                    A52.Enabled = true;
-                    A53.Enabled = true;
-                    B51.Enabled = true;
-                    B52.Enabled = true;
-                    B53.Enabled = true;
-                    C51.Enabled = true;
-                    C52.Enabled = true;
-                    C53.Enabled = true;
+                    {
+                        if (!X.A51 && !O.A51)
+                        {
+                            A51.Enabled = true;
+                        }
+
+                        if (!X.A52 && !O.A52)
+                        {
+                            A52.Enabled = true;
+                        }
+
+                        if (!X.A53 && !O.A53)
+                        {
+                            A53.Enabled = true;
+                        }
+                        if (!X.B51 && !O.B51)
+                        {
+                            B51.Enabled = true;
+                        }
+                        if (!X.B52 && !O.B52)
+                        {
+                            B52.Enabled = true;
+                        }
+                        if (!X.B53 && !O.B53)
+                        {
+                            B53.Enabled = true;
+                        }
+                        if (!X.C51 && !O.C51)
+                        {
+                            C51.Enabled = true;
+                        }
+                        if (!X.C52 && !O.C52)
+                        {
+                            C52.Enabled = true;
+                        }
+                        if (!X.C53 && !O.C53)
+                        {
+                            C53.Enabled = true;
+                        }
                     }
                     else
                     {
@@ -215,15 +364,45 @@ namespace Tic_Tac_Toe
                     break;
                 case 6:
                     if (!Square6DoneO && !Square6DoneX)
-                    {A61.Enabled = true;
-                    A62.Enabled = true;
-                    A63.Enabled = true;
-                    B61.Enabled = true;
-                    B62.Enabled = true;
-                    B63.Enabled = true;
-                    C61.Enabled = true;
-                    C62.Enabled = true;
-                    C63.Enabled = true;
+                    {
+                        if (!X.A61 && !O.A61)
+                        {
+                            A61.Enabled = true;
+                        }
+
+                        if (!X.A62 && !O.A62)
+                        {
+                            A62.Enabled = true;
+                        }
+
+                        if (!X.A63 && !O.A63)
+                        {
+                            A63.Enabled = true;
+                        }
+                        if (!X.B61 && !O.B61)
+                        {
+                            B61.Enabled = true;
+                        }
+                        if (!X.B62 && !O.B62)
+                        {
+                            B62.Enabled = true;
+                        }
+                        if (!X.B63 && !O.B63)
+                        {
+                            B63.Enabled = true;
+                        }
+                        if (!X.C61 && !O.C61)
+                        {
+                            C61.Enabled = true;
+                        }
+                        if (!X.C62 && !O.C62)
+                        {
+                            C62.Enabled = true;
+                        }
+                        if (!X.C63 && !O.C63)
+                        {
+                            C63.Enabled = true;
+                        }
                     }
                     else
                     {
@@ -232,15 +411,45 @@ namespace Tic_Tac_Toe
                     break;
                 case 7:
                     if (!Square7DoneO && !Square7DoneX)
-                    { A71.Enabled = true;
-                    A72.Enabled = true;
-                    A73.Enabled = true;
-                    B71.Enabled = true;
-                    B72.Enabled = true;
-                    B73.Enabled = true;
-                    C71.Enabled = true;
-                    C72.Enabled = true;
-                    C73.Enabled = true;
+                    {
+                        if (!X.A71 && !O.A71)
+                        {
+                            A71.Enabled = true;
+                        }
+
+                        if (!X.A72 && !O.A72)
+                        {
+                            A72.Enabled = true;
+                        }
+
+                        if (!X.A73 && !O.A73)
+                        {
+                            A73.Enabled = true;
+                        }
+                        if (!X.B71 && !O.B71)
+                        {
+                            B71.Enabled = true;
+                        }
+                        if (!X.B72 && !O.B72)
+                        {
+                            B72.Enabled = true;
+                        }
+                        if (!X.B73 && !O.B73)
+                        {
+                            B73.Enabled = true;
+                        }
+                        if (!X.C71 && !O.C71)
+                        {
+                            C71.Enabled = true;
+                        }
+                        if (!X.C72 && !O.C72)
+                        {
+                            C72.Enabled = true;
+                        }
+                        if (!X.C73 && !O.C73)
+                        {
+                            C73.Enabled = true;
+                        }
                     }
                     else
                     {
@@ -249,15 +458,45 @@ namespace Tic_Tac_Toe
                     break;
                 case 8:
                     if (!Square8DoneO && !Square8DoneX)
-                    {A81.Enabled = true;
-                    A82.Enabled = true;
-                    A83.Enabled = true;
-                    B81.Enabled = true;
-                    B82.Enabled = true;
-                    B83.Enabled = true;
-                    C81.Enabled = true;
-                    C82.Enabled = true;
-                    C83.Enabled = true;
+                    {
+                        if (!X.A81 && !O.A81)
+                        {
+                            A81.Enabled = true;
+                        }
+
+                        if (!X.A82 && !O.A82)
+                        {
+                            A82.Enabled = true;
+                        }
+
+                        if (!X.A83 && !O.A83)
+                        {
+                            A83.Enabled = true;
+                        }
+                        if (!X.B81 && !O.B81)
+                        {
+                            B81.Enabled = true;
+                        }
+                        if (!X.B82 && !O.B82)
+                        {
+                            B82.Enabled = true;
+                        }
+                        if (!X.B83 && !O.B83)
+                        {
+                            B83.Enabled = true;
+                        }
+                        if (!X.C81 && !O.C81)
+                        {
+                            C81.Enabled = true;
+                        }
+                        if (!X.C82 && !O.C82)
+                        {
+                            C82.Enabled = true;
+                        }
+                        if (!X.C83 && !O.C83)
+                        {
+                            C83.Enabled = true;
+                        }
                     }
                     else
                     {
@@ -266,15 +505,45 @@ namespace Tic_Tac_Toe
                     break;
                 case 9:
                     if (!Square9DoneO && !Square9DoneX)
-                    {  A91.Enabled = true;
-                    A92.Enabled = true;
-                    A93.Enabled = true;
-                    B91.Enabled = true;
-                    B92.Enabled = true;
-                    B93.Enabled = true;
-                    C91.Enabled = true;
-                    C92.Enabled = true;
-                    C93.Enabled = true;
+                    {
+                        if (!X.A91 && !O.A91)
+                        {
+                            A91.Enabled = true;
+                        }
+
+                        if (!X.A92 && !O.A92)
+                        {
+                            A92.Enabled = true;
+                        }
+
+                        if (!X.A93 && !O.A93)
+                        {
+                            A93.Enabled = true;
+                        }
+                        if (!X.B91 && !O.B91)
+                        {
+                            B91.Enabled = true;
+                        }
+                        if (!X.B92 && !O.B92)
+                        {
+                            B92.Enabled = true;
+                        }
+                        if (!X.B93 && !O.B93)
+                        {
+                            B93.Enabled = true;
+                        }
+                        if (!X.C91 && !O.C91)
+                        {
+                            C91.Enabled = true;
+                        }
+                        if (!X.C92 && !O.C92)
+                        {
+                            C92.Enabled = true;
+                        }
+                        if (!X.C93 && !O.C93)
+                        {
+                            C93.Enabled = true;
+                        }
                     }
                     else
                     {
@@ -788,13 +1057,13 @@ namespace Tic_Tac_Toe
             if (CheckAreas() == 1)
             {
                 BlankSquares(0);
-                MessageBox.Show("X WINS!", "Tic Tac Toe");
+                MessageBox.Show("X W8NS!", "Tic Tac Toe");
             }
 
             if (CheckAreas() == 2)
             {
                 BlankSquares(0);
-                MessageBox.Show("O WINS!", "Tic Tac Toe");
+                MessageBox.Show("O W8NS!", "Tic Tac Toe");
             }
 
         }
@@ -1243,19 +1512,19 @@ namespace Tic_Tac_Toe
             ForceArea(9);
         }
 
-        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newGameToolStripMenu8tem_Click(object sender, EventArgs e)
         {
             NewGame();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exitToolStripMenu8tem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void aboutToolStripMenu8tem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This Is A ULTIMATE Tic Tac Toe Game. Made By Mike Hodges");
+            MessageBox.Show("This 8s A ULT8MATE Tic Tac Toe Game. Made By Mike Hodges");
         }
 
         private void A21_Click(object sender, EventArgs e)
