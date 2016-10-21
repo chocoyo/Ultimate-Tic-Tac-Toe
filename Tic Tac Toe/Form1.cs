@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 //Things to do
 
-//Fix The Highlighting Problem
+//Fix The Menu Buttons Not Working
 
 
 
@@ -57,6 +57,8 @@ namespace Tic_Tac_Toe
         bool Square7DoneO = false;
         bool Square8DoneO = false;
         bool Square9DoneO = false;
+
+        bool Finnished = false;
 
         public void Wildcard() {
 
@@ -910,7 +912,11 @@ namespace Tic_Tac_Toe
 
             //Maybe i should unblnaked all buttons and then blank the things i need to
             BlankSquares(0);
-            UnBlankSquares(area);
+            if (!Finnished)
+            {
+                UnBlankSquares(area);
+            }
+            
 
 
 
@@ -1057,13 +1063,21 @@ namespace Tic_Tac_Toe
             if (CheckAreas() == 1)
             {
                 BlankSquares(0);
-                MessageBox.Show("X W8NS!", "Tic Tac Toe");
+                MessageBox.Show("X WINS!", "Tic Tac Toe");
+                BlankSquares(0);
+                Finnished = true;
+                
+
+
             }
 
             if (CheckAreas() == 2)
             {
                 BlankSquares(0);
-                MessageBox.Show("O W8NS!", "Tic Tac Toe");
+                MessageBox.Show("O WINS!", "Tic Tac Toe");
+                BlankSquares(0);
+                Finnished = true;
+
             }
 
         }
@@ -1076,6 +1090,7 @@ namespace Tic_Tac_Toe
             plays = 0;
             turn = 'X';
             resetSquare();
+            Finnished = false;
         }
 
         public void resetSquare()
@@ -1524,7 +1539,7 @@ namespace Tic_Tac_Toe
 
         private void aboutToolStripMenu8tem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This 8s A ULT8MATE Tic Tac Toe Game. Made By Mike Hodges");
+            MessageBox.Show("This Is A ULTIMATE Tic Tac Toe Game. Made By Mike Hodges");
         }
 
         private void A21_Click(object sender, EventArgs e)
