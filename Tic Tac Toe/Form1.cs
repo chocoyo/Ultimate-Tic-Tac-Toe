@@ -11,7 +11,44 @@ using System.Windows.Forms;
 
 //Things to do
 
-//Fix The Menu Buttons Not Working
+//This Is Code For When I Finally Clean Things Up
+
+                        //for (int k = 0; k< 3; k++)
+                        //{
+                        //    for (int i = 0; i< 9; i++)
+                        //    {
+                        //        for (int p = 0; p< 3; p++)
+                        //        {
+                        //            if (!X.A[i, p] && !O.A[i, p])
+                        //            {
+                        //                String name = "";
+                        //                char c = (k == 0) ? 'A' : (k == 1) ? 'B' : 'C';
+                        //                name += c;
+                        //                name += (i + 1);
+                        //                name += (p + 1);
+                        //                Controls[name].Enabled = true;
+                        //            }
+                        //            if (!X.B[i, p] && !O.B[i, p])
+                        //            {
+                        //                String name = "";
+                        //                char c = (k == 0) ? 'A' : (k == 1) ? 'B' : 'C';
+                        //                name += c;
+                        //                name += (i + 1);
+                        //                name += (p + 1);
+                        //                Controls[name].Enabled = true;
+                        //            }
+                        //            if (!X.C[i, p] && !O.C[i, p])
+                        //            {
+                        //                String name = "";
+                        //                char c = (k == 0) ? 'A' : (k == 1) ? 'B' : 'C';
+                        //                name += c;
+                        //                name += (i + 1);
+                        //                name += (p + 1);
+                        //                Controls[name].Enabled = true;
+                        //            }
+                        //        }
+                        //    }
+                        //}
 
 
 
@@ -28,8 +65,15 @@ namespace Tic_Tac_Toe
         private void Form1_Load(object sender, EventArgs e)
         {
             //MessageBox.Show("X Goes First Rn :)");
-            
+            for (int i = 0; i < 9; i++)
+            {
+                SquareDoneO[i] = false;
+            }
 
+            for (int i = 0; i < 9; i++)
+            {
+                SquareDoneX[i] = false;
+            }
         }
 
 
@@ -38,66 +82,49 @@ namespace Tic_Tac_Toe
         int plays = 0;
         Squares X = new Squares();
         Squares O = new Squares();
-        bool Square1DoneX = false;
-        bool Square2DoneX = false;
-        bool Square3DoneX = false;
-        bool Square4DoneX = false;
-        bool Square5DoneX = false;
-        bool Square6DoneX = false;
-        bool Square7DoneX = false;
-        bool Square8DoneX = false;
-        bool Square9DoneX = false;
-
-        bool Square1DoneO = false;
-        bool Square2DoneO = false;
-        bool Square3DoneO = false;
-        bool Square4DoneO = false;
-        bool Square5DoneO = false;
-        bool Square6DoneO = false;
-        bool Square7DoneO = false;
-        bool Square8DoneO = false;
-        bool Square9DoneO = false;
-
+        bool[] SquareDoneX = new bool[9];
+        bool[] SquareDoneO = new bool[9];
+        
         bool Finnished = false;
 
         public void Wildcard() {
 
-            if (!Square1DoneO && !Square1DoneX)
+            if (!SquareDoneO[0] && !SquareDoneX[0])
             {
                 UnBlankSquares(1);
             }
 
-            if (!Square2DoneO && !Square2DoneX)
+            if (!SquareDoneO[1] && !SquareDoneX[1])
             {
                 UnBlankSquares(2);
             }
 
-            if (!Square3DoneO && !Square3DoneX)
+            if (!SquareDoneO[2] && !SquareDoneX[2])
             {
                 UnBlankSquares(3);
             }
 
-            if (!Square4DoneO && !Square4DoneX)
+            if (!SquareDoneO[3] && !SquareDoneX[3])
             {
                 UnBlankSquares(4);
             }
-            if (!Square5DoneO && !Square5DoneX)
+            if (!SquareDoneO[4] && !SquareDoneX[4])
             {
                 UnBlankSquares(5);
             }
-            if (!Square6DoneO && !Square6DoneX)
+            if (!SquareDoneO[5] && !SquareDoneX[5])
             {
                 UnBlankSquares(6);
             }
-            if (!Square7DoneO && !Square7DoneX)
+            if (!SquareDoneO[6] && !SquareDoneX[6])
             {
                 UnBlankSquares(7);
             }
-            if (!Square8DoneO && !Square8DoneX)
+            if (!SquareDoneO[7] && !SquareDoneX[7])
             {
                 UnBlankSquares(8);
             }
-            if (!Square9DoneO && !Square9DoneX)
+            if (!SquareDoneO[8] && !SquareDoneX[8])
             {
                 UnBlankSquares(9);
             }
@@ -116,106 +143,83 @@ namespace Tic_Tac_Toe
                     break;
                 case 1:
                     //Example Of How To Whitelist Some of The Squares
-                    if (!Square1DoneX && !Square1DoneO)
+                    if (!SquareDoneX[0] && !SquareDoneO[0])
                     {
-                        //Whitelist The Squares Within The Squares
-                        if (!X.A11 && !O.A11)
+                        int i = 0;
+                        for (int p = 0; p < 3; p++)
                         {
-                            A11.Enabled = true;
+                            if (!X.A[i, p] && !O.A[i, p])
+                            {
+                                String name = "";
+                                char c = 'A';
+                                name += c;
+                                name += (i + 1);
+                                name += (p + 1);
+                                Controls[name].Enabled = true;
+                            }
+                            if (!X.B[i, p] && !O.B[i, p])
+                            {
+                                String name = "";
+                                char c = 'B';
+                                name += c;
+                                name += (i + 1);
+                                name += (p + 1);
+                                Controls[name].Enabled = true;
+                            }
+                            if (!X.C[i, p] && !O.C[i, p])
+                            {
+                                String name = "";
+                                char c = 'C';
+                                name += c;
+                                name += (i+1);
+                                name += (p + 1);
+                                Controls[name].Enabled = true;
+                            }
                         }
 
-                        if (!X.A12 && !O.A12)
-                        {
-                            A12.Enabled = true;
-                        }
-
-                        if (!X.A13 && !O.A13)
-                        {
-                            A13.Enabled = true;
-                        }
-                        if (!X.B11 && !O.B11)
-                        {
-                            B11.Enabled = true;
-                        }
-                        if (!X.B12 && !O.B12)
-                        {
-                            B12.Enabled = true;
-                        }
-                        if (!X.B13 && !O.B13)
-                        {
-                            B13.Enabled = true;
-                        }
-                        if (!X.C11 && !O.C11)
-                        {
-                            C11.Enabled = true;
-                        }
-                        if (!X.C12 && !O.C12)
-                        {
-                            C12.Enabled = true;
-                        }
-                        if (!X.C13 && !O.C13)
-                        {
-                            C13.Enabled = true;
-                        }
                     }
                     else
                     {
                         Wildcard();
-                        //UnBlankSquares(2);
-                        //UnBlankSquares(3);
-                        //UnBlankSquares(4);
-                        //UnBlankSquares(5);
-                        //UnBlankSquares(6);
-                        //UnBlankSquares(7);
-                        //UnBlankSquares(8);
-                        //UnBlankSquares(9);
                     }
-                    
-                  
-
                     break;
                 case 2:
-                    if (!Square2DoneO && !Square2DoneX)
+                    if (!SquareDoneO[1] && !SquareDoneX[1])
                     {
-                        if (!X.A21 && !O.A21)
+                        int i = (area - 1);
+                        for (int k = 0; k < 3; k++)
                         {
-                            A21.Enabled = true;
+                            for (int p = 0; p < 3; p++)
+                            {
+                                if (!X.A[i, p] && !O.A[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'A';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.B[i, p] && !O.B[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'B';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.C[i, p] && !O.C[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'C';
+                                    name += c;
+                                    name += (i+1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                            }
                         }
-
-                        if (!X.A22 && !O.A22)
-                        {
-                            A22.Enabled = true;
-                        }
-
-                        if (!X.A23 && !O.A23)
-                        {
-                            A23.Enabled = true;
-                        }
-                        if (!X.B21 && !O.B21)
-                        {
-                            B21.Enabled = true;
-                        }
-                        if (!X.B22 && !O.B22)
-                        {
-                            B22.Enabled = true;
-                        }
-                        if (!X.B23 && !O.B23)
-                        {
-                            B23.Enabled = true;
-                        }
-                        if (!X.C21 && !O.C21)
-                        {
-                            C21.Enabled = true;
-                        }
-                        if (!X.C22 && !O.C22)
-                        {
-                            C22.Enabled = true;
-                        }
-                        if (!X.C23 && !O.C23)
-                        {
-                            C23.Enabled = true;
-                        }
-
                     }
                     else
                     {
@@ -224,45 +228,41 @@ namespace Tic_Tac_Toe
 
                     break;
                 case 3:
-                    if (!Square3DoneO && !Square3DoneX)
+                    if (!SquareDoneO[2] && !SquareDoneX[2])
                     {
-                        if (!X.A31 && !O.A31)
+                        int i = (area - 1);
+                        for (int k = 0; k < 3; k++)
                         {
-                            A31.Enabled = true;
-                        }
-
-                        if (!X.A32 && !O.A32)
-                        {
-                            A32.Enabled = true;
-                        }
-
-                        if (!X.A33 && !O.A33)
-                        {
-                            A33.Enabled = true;
-                        }
-                        if (!X.B31 && !O.B31)
-                        {
-                            B31.Enabled = true;
-                        }
-                        if (!X.B32 && !O.B32)
-                        {
-                            B32.Enabled = true;
-                        }
-                        if (!X.B33 && !O.B33)
-                        {
-                            B33.Enabled = true;
-                        }
-                        if (!X.C31 && !O.C31)
-                        {
-                            C31.Enabled = true;
-                        }
-                        if (!X.C32 && !O.C32)
-                        {
-                            C32.Enabled = true;
-                        }
-                        if (!X.C33 && !O.C33)
-                        {
-                            C33.Enabled = true;
+                            for (int p = 0; p < 3; p++)
+                            {
+                                if (!X.A[i, p] && !O.A[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'A';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.B[i, p] && !O.B[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'B';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.C[i, p] && !O.C[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'C';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                            }
                         }
                     }
                     else
@@ -271,45 +271,41 @@ namespace Tic_Tac_Toe
                     }
                     break;
                 case 4:
-                    if (!Square4DoneO && !Square4DoneX)
+                    if (!SquareDoneO[3] && !SquareDoneX[3])
                     {
-                        if (!X.A41 && !O.A41)
+                        int i = (area - 1);
+                        for (int k = 0; k < 3; k++)
                         {
-                            A41.Enabled = true;
-                        }
-
-                        if (!X.A42 && !O.A42)
-                        {
-                            A42.Enabled = true;
-                        }
-
-                        if (!X.A43 && !O.A43)
-                        {
-                            A43.Enabled = true;
-                        }
-                        if (!X.B41 && !O.B41)
-                        {
-                            B41.Enabled = true;
-                        }
-                        if (!X.B42 && !O.B42)
-                        {
-                            B42.Enabled = true;
-                        }
-                        if (!X.B43 && !O.B43)
-                        {
-                            B43.Enabled = true;
-                        }
-                        if (!X.C41 && !O.C41)
-                        {
-                            C41.Enabled = true;
-                        }
-                        if (!X.C42 && !O.C42)
-                        {
-                            C42.Enabled = true;
-                        }
-                        if (!X.C43 && !O.C43)
-                        {
-                            C43.Enabled = true;
+                            for (int p = 0; p < 3; p++)
+                            {
+                                if (!X.A[i, p] && !O.A[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'A';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.B[i, p] && !O.B[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'B';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.C[i, p] && !O.C[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'C';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                            }
                         }
                     }
                     else
@@ -318,45 +314,41 @@ namespace Tic_Tac_Toe
                     }
                     break;
                 case 5:
-                    if (!Square5DoneO && !Square5DoneX)
+                    if (!SquareDoneO[4] && !SquareDoneX[4])
                     {
-                        if (!X.A51 && !O.A51)
+                        int i = (area - 1);
+                        for (int k = 0; k < 3; k++)
                         {
-                            A51.Enabled = true;
-                        }
-
-                        if (!X.A52 && !O.A52)
-                        {
-                            A52.Enabled = true;
-                        }
-
-                        if (!X.A53 && !O.A53)
-                        {
-                            A53.Enabled = true;
-                        }
-                        if (!X.B51 && !O.B51)
-                        {
-                            B51.Enabled = true;
-                        }
-                        if (!X.B52 && !O.B52)
-                        {
-                            B52.Enabled = true;
-                        }
-                        if (!X.B53 && !O.B53)
-                        {
-                            B53.Enabled = true;
-                        }
-                        if (!X.C51 && !O.C51)
-                        {
-                            C51.Enabled = true;
-                        }
-                        if (!X.C52 && !O.C52)
-                        {
-                            C52.Enabled = true;
-                        }
-                        if (!X.C53 && !O.C53)
-                        {
-                            C53.Enabled = true;
+                            for (int p = 0; p < 3; p++)
+                            {
+                                if (!X.A[i, p] && !O.A[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'A';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.B[i, p] && !O.B[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'B';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.C[i, p] && !O.C[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'C';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                            }
                         }
                     }
                     else
@@ -365,45 +357,41 @@ namespace Tic_Tac_Toe
                     }
                     break;
                 case 6:
-                    if (!Square6DoneO && !Square6DoneX)
+                    if (!SquareDoneO[5] && !SquareDoneX[5])
                     {
-                        if (!X.A61 && !O.A61)
+                        int i = (area - 1);
+                        for (int k = 0; k < 3; k++)
                         {
-                            A61.Enabled = true;
-                        }
-
-                        if (!X.A62 && !O.A62)
-                        {
-                            A62.Enabled = true;
-                        }
-
-                        if (!X.A63 && !O.A63)
-                        {
-                            A63.Enabled = true;
-                        }
-                        if (!X.B61 && !O.B61)
-                        {
-                            B61.Enabled = true;
-                        }
-                        if (!X.B62 && !O.B62)
-                        {
-                            B62.Enabled = true;
-                        }
-                        if (!X.B63 && !O.B63)
-                        {
-                            B63.Enabled = true;
-                        }
-                        if (!X.C61 && !O.C61)
-                        {
-                            C61.Enabled = true;
-                        }
-                        if (!X.C62 && !O.C62)
-                        {
-                            C62.Enabled = true;
-                        }
-                        if (!X.C63 && !O.C63)
-                        {
-                            C63.Enabled = true;
+                            for (int p = 0; p < 3; p++)
+                            {
+                                if (!X.A[i, p] && !O.A[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'A';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.B[i, p] && !O.B[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'B';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.C[i, p] && !O.C[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'C';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                            }
                         }
                     }
                     else
@@ -412,45 +400,41 @@ namespace Tic_Tac_Toe
                     }
                     break;
                 case 7:
-                    if (!Square7DoneO && !Square7DoneX)
+                    if (!SquareDoneO[6] && !SquareDoneX[6])
                     {
-                        if (!X.A71 && !O.A71)
+                        int i = (area - 1);
+                        for (int k = 0; k < 3; k++)
                         {
-                            A71.Enabled = true;
-                        }
-
-                        if (!X.A72 && !O.A72)
-                        {
-                            A72.Enabled = true;
-                        }
-
-                        if (!X.A73 && !O.A73)
-                        {
-                            A73.Enabled = true;
-                        }
-                        if (!X.B71 && !O.B71)
-                        {
-                            B71.Enabled = true;
-                        }
-                        if (!X.B72 && !O.B72)
-                        {
-                            B72.Enabled = true;
-                        }
-                        if (!X.B73 && !O.B73)
-                        {
-                            B73.Enabled = true;
-                        }
-                        if (!X.C71 && !O.C71)
-                        {
-                            C71.Enabled = true;
-                        }
-                        if (!X.C72 && !O.C72)
-                        {
-                            C72.Enabled = true;
-                        }
-                        if (!X.C73 && !O.C73)
-                        {
-                            C73.Enabled = true;
+                            for (int p = 0; p < 3; p++)
+                            {
+                                if (!X.A[i, p] && !O.A[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'A';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.B[i, p] && !O.B[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'B';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.C[i, p] && !O.C[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'C';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                            }
                         }
                     }
                     else
@@ -459,45 +443,41 @@ namespace Tic_Tac_Toe
                     }
                     break;
                 case 8:
-                    if (!Square8DoneO && !Square8DoneX)
+                    if (!SquareDoneO[7] && !SquareDoneX[7])
                     {
-                        if (!X.A81 && !O.A81)
+                        int i = (area - 1);
+                        for (int k = 0; k < 3; k++)
                         {
-                            A81.Enabled = true;
-                        }
-
-                        if (!X.A82 && !O.A82)
-                        {
-                            A82.Enabled = true;
-                        }
-
-                        if (!X.A83 && !O.A83)
-                        {
-                            A83.Enabled = true;
-                        }
-                        if (!X.B81 && !O.B81)
-                        {
-                            B81.Enabled = true;
-                        }
-                        if (!X.B82 && !O.B82)
-                        {
-                            B82.Enabled = true;
-                        }
-                        if (!X.B83 && !O.B83)
-                        {
-                            B83.Enabled = true;
-                        }
-                        if (!X.C81 && !O.C81)
-                        {
-                            C81.Enabled = true;
-                        }
-                        if (!X.C82 && !O.C82)
-                        {
-                            C82.Enabled = true;
-                        }
-                        if (!X.C83 && !O.C83)
-                        {
-                            C83.Enabled = true;
+                            for (int p = 0; p < 3; p++)
+                            {
+                                if (!X.A[i, p] && !O.A[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'A';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.B[i, p] && !O.B[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'B';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.C[i, p] && !O.C[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'C';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                            }
                         }
                     }
                     else
@@ -506,51 +486,46 @@ namespace Tic_Tac_Toe
                     }
                     break;
                 case 9:
-                    if (!Square9DoneO && !Square9DoneX)
+                    if (!SquareDoneO[8] && !SquareDoneX[8])
                     {
-                        if (!X.A91 && !O.A91)
+                        int i = (area - 1);
+                        for (int k = 0; k < 3; k++)
                         {
-                            A91.Enabled = true;
-                        }
-
-                        if (!X.A92 && !O.A92)
-                        {
-                            A92.Enabled = true;
-                        }
-
-                        if (!X.A93 && !O.A93)
-                        {
-                            A93.Enabled = true;
-                        }
-                        if (!X.B91 && !O.B91)
-                        {
-                            B91.Enabled = true;
-                        }
-                        if (!X.B92 && !O.B92)
-                        {
-                            B92.Enabled = true;
-                        }
-                        if (!X.B93 && !O.B93)
-                        {
-                            B93.Enabled = true;
-                        }
-                        if (!X.C91 && !O.C91)
-                        {
-                            C91.Enabled = true;
-                        }
-                        if (!X.C92 && !O.C92)
-                        {
-                            C92.Enabled = true;
-                        }
-                        if (!X.C93 && !O.C93)
-                        {
-                            C93.Enabled = true;
+                            for (int p = 0; p < 3; p++)
+                            {
+                                if (!X.A[i, p] && !O.A[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'A';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.B[i, p] && !O.B[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'B';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                                if (!X.C[i, p] && !O.C[i, p])
+                                {
+                                    String name = "";
+                                    char c = 'C';
+                                    name += c;
+                                    name += (i + 1);
+                                    name += (p + 1);
+                                    Controls[name].Enabled = true;
+                                }
+                            }
                         }
                     }
                     else
                     {
                         Wildcard();
-
                     }
                     break;
                 default:
@@ -916,11 +891,6 @@ namespace Tic_Tac_Toe
             {
                 UnBlankSquares(area);
             }
-            
-
-
-
-
         }
 
 
@@ -928,10 +898,10 @@ namespace Tic_Tac_Toe
 
             xPermutations();
             oPermutations();
-            if (Square1DoneX || Square1DoneO)
+            if (SquareDoneX[0] || SquareDoneO[0])
             {
                 BlankSquares(1);
-                if (Square1DoneX)
+                if (SquareDoneX[0])
                 {
                     SetText(1, 'X');
                 }
@@ -942,10 +912,10 @@ namespace Tic_Tac_Toe
                 
             }
 
-            if (Square2DoneX || Square2DoneO)
+            if (SquareDoneX[1] || SquareDoneO[1])
             {
                 BlankSquares(2);
-                if (Square2DoneX)
+                if (SquareDoneX[1])
                 {
                     SetText(2, 'X');
                 }
@@ -955,10 +925,10 @@ namespace Tic_Tac_Toe
                 }
 
             }
-            if (Square3DoneX || Square3DoneO)
+            if (SquareDoneX[2] || SquareDoneO[2])
             {
                 BlankSquares(3);
-                if (Square3DoneX)
+                if (SquareDoneX[2])
                 {
                     SetText(3, 'X');
                 }
@@ -968,10 +938,10 @@ namespace Tic_Tac_Toe
                 }
 
             }
-            if (Square4DoneX || Square4DoneO)
+            if (SquareDoneX[3] || SquareDoneO[3])
             {
                 BlankSquares(4);
-                if (Square4DoneX)
+                if (SquareDoneX[3])
                 {
                     SetText(4, 'X');
                 }
@@ -981,10 +951,10 @@ namespace Tic_Tac_Toe
                 }
 
             }
-            if (Square5DoneX || Square5DoneO)
+            if (SquareDoneX[4] || SquareDoneO[4])
             {
                 BlankSquares(5);
-                if (Square5DoneX)
+                if (SquareDoneX[4])
                 {
                     SetText(5, 'X');
                 }
@@ -994,10 +964,10 @@ namespace Tic_Tac_Toe
                 }
 
             }
-            if (Square6DoneX || Square6DoneO)
+            if (SquareDoneX[5] || SquareDoneO[5])
             {
                 BlankSquares(6);
-                if (Square6DoneX)
+                if (SquareDoneX[5])
                 {
                     SetText(6, 'X');
                 }
@@ -1007,10 +977,10 @@ namespace Tic_Tac_Toe
                 }
 
             }
-            if (Square7DoneX || Square7DoneO)
+            if (SquareDoneX[6] || SquareDoneO[6])
             {
                 BlankSquares(7);
-                if (Square7DoneX)
+                if (SquareDoneX[6])
                 {
                     SetText(7, 'X');
                 }
@@ -1020,10 +990,10 @@ namespace Tic_Tac_Toe
                 }
 
             }
-            if (Square8DoneX || Square8DoneO)
+            if (SquareDoneX[7] || SquareDoneO[7])
             {
                 BlankSquares(8);
-                if (Square8DoneX)
+                if (SquareDoneX[7])
                 {
                     SetText(8, 'X');
                 }
@@ -1033,10 +1003,10 @@ namespace Tic_Tac_Toe
                 }
 
             }
-            if (Square9DoneX || Square9DoneO)
+            if (SquareDoneX[8] || SquareDoneO[8])
             {
                 BlankSquares(9);
-                if (Square9DoneX)
+                if (SquareDoneX[8])
                 {
                     SetText(9, 'X');
                 }
@@ -1094,380 +1064,94 @@ namespace Tic_Tac_Toe
         }
 
         public void resetSquare()
-        {   
-                            //Reset The Text On All Of The Buttons
-                            A11.Text = "";
-                            A11.Enabled = true;
-                            A12.Text = "";
-                            A12.Enabled = true;
-                            A13.Text = "";
-                            A13.Enabled = true;
-                            B11.Text = "";
-                            B11.Enabled = true;
-                            B12.Text = "";
-                            B12.Enabled = true;
-                            B13.Text = "";
-                            B13.Enabled = true;
-                            C11.Text = "";
-                            C11.Enabled = true;
-                            C12.Text = "";
-                            C12.Enabled = true;
-                            C13.Text = "";
-                            C13.Enabled = true;
+        {
+            //Reset The Text On All Of The Buttons
 
-            A21.Text = "";
-            A21.Enabled = true;
-            A22.Text = "";
-            A22.Enabled = true;
-            A23.Text = "";
-            A23.Enabled = true;
-            B21.Text = "";
-            B21.Enabled = true;
-            B22.Text = "";
-            B22.Enabled = true;
-            B23.Text = "";
-            B23.Enabled = true;
-            C21.Text = "";
-            C21.Enabled = true;
-            C22.Text = "";
-            C22.Enabled = true;
-            C23.Text = "";
-            C23.Enabled = true;
-
-            A31.Text = "";
-            A31.Enabled = true;
-            A32.Text = "";
-            A32.Enabled = true;
-            A33.Text = "";
-            A33.Enabled = true;
-            B31.Text = "";
-            B31.Enabled = true;
-            B32.Text = "";
-            B32.Enabled = true;
-            B33.Text = "";
-            B33.Enabled = true;
-            C31.Text = "";
-            C31.Enabled = true;
-            C32.Text = "";
-            C32.Enabled = true;
-            C33.Text = "";
-            C33.Enabled = true;
-
-            A41.Text = "";
-            A41.Enabled = true;
-            A42.Text = "";
-            A42.Enabled = true;
-            A43.Text = "";
-            A43.Enabled = true;
-            B41.Text = "";
-            B41.Enabled = true;
-            B42.Text = "";
-            B42.Enabled = true;
-            B43.Text = "";
-            B43.Enabled = true;
-            C41.Text = "";
-            C41.Enabled = true;
-            C42.Text = "";
-            C42.Enabled = true;
-            C43.Text = "";
-            C43.Enabled = true;
-
-            A51.Text = "";
-            A51.Enabled = true;
-            A52.Text = "";
-            A52.Enabled = true;
-            A53.Text = "";
-            A53.Enabled = true;
-            B51.Text = "";
-            B51.Enabled = true;
-            B52.Text = "";
-            B52.Enabled = true;
-            B53.Text = "";
-            B53.Enabled = true;
-            C51.Text = "";
-            C51.Enabled = true;
-            C52.Text = "";
-            C52.Enabled = true;
-            C53.Text = "";
-            C53.Enabled = true;
-
-            A61.Text = "";
-            A61.Enabled = true;
-            A62.Text = "";
-            A62.Enabled = true;
-            A63.Text = "";
-            A63.Enabled = true;
-            B61.Text = "";
-            B61.Enabled = true;
-            B62.Text = "";
-            B62.Enabled = true;
-            B63.Text = "";
-            B63.Enabled = true;
-            C61.Text = "";
-            C61.Enabled = true;
-            C62.Text = "";
-            C62.Enabled = true;
-            C63.Text = "";
-            C63.Enabled = true;
-
-            A71.Text = "";
-            A71.Enabled = true;
-            A72.Text = "";
-            A72.Enabled = true;
-            A73.Text = "";
-            A73.Enabled = true;
-            B71.Text = "";
-            B71.Enabled = true;
-            B72.Text = "";
-            B72.Enabled = true;
-            B73.Text = "";
-            B73.Enabled = true;
-            C71.Text = "";
-            C71.Enabled = true;
-            C72.Text = "";
-            C72.Enabled = true;
-            C73.Text = "";
-            C73.Enabled = true;
-
-            A81.Text = "";
-            A81.Enabled = true;
-            A82.Text = "";
-            A82.Enabled = true;
-            A83.Text = "";
-            A83.Enabled = true;
-            B81.Text = "";
-            B81.Enabled = true;
-            B82.Text = "";
-            B82.Enabled = true;
-            B83.Text = "";
-            B83.Enabled = true;
-            C81.Text = "";
-            C81.Enabled = true;
-            C82.Text = "";
-            C82.Enabled = true;
-            C83.Text = "";
-            C83.Enabled = true;
-
-            A91.Text = "";
-            A91.Enabled = true;
-            A92.Text = "";
-            A92.Enabled = true;
-            A93.Text = "";
-            A93.Enabled = true;
-            B91.Text = "";
-            B91.Enabled = true;
-            B92.Text = "";
-            B92.Enabled = true;
-            B93.Text = "";
-            B93.Enabled = true;
-            C91.Text = "";
-            C91.Enabled = true;
-            C92.Text = "";
-            C92.Enabled = true;
-            C93.Text = "";
-            C93.Enabled = true;
+            for (int k = 0; k< 3; k++)
+            {
+                for (int i = 0; i< 9; i++)
+                {
+                    for (int p = 0; p< 3; p++)
+                    {
+                            String name = "";
+                            char c = (k == 0) ? 'A' : (k == 1) ? 'B' : 'C';
+                            name += c;
+                            name += (i + 1);
+                            name += (p + 1);
+                            Controls[name].Enabled = true;
+                            Controls[name].Text = "";
+                    }
+                }
+            }
 
 
             //Set Values Back To False
-            X.A11 = false;
-            X.A12 = false;
-            X.A13 = false;
-            X.B11 = false;
-            X.B12 = false;
-            X.B13 = false;
-            X.C11 = false;
-            X.C12 = false;
-            X.C13 = false;
+            for (int i = 0; i < 9; i++)
+            {
+                for (int p = 0; p < 3; p++)
+                {
+                    X.A[i, p] = false;
+                }
+            }
 
-            X.A21 = false;
-            X.A22 = false;
-            X.A23 = false;
-            X.B21 = false;
-            X.B22 = false;
-            X.B23 = false;
-            X.C21 = false;
-            X.C22 = false;
-            X.C23 = false;
+            for (int i = 0; i < 9; i++)
+            {
+                for (int p = 0; p < 3; p++)
+                {
+                    X.B[i, p] = false;
+                }
+            }
 
-            X.A31 = false;
-            X.A32 = false;
-            X.A33 = false;
-            X.B31 = false;
-            X.B32 = false;
-            X.B33 = false;
-            X.C31 = false;
-            X.C32 = false;
-            X.C33 = false;
+            for (int i = 0; i < 9; i++)
+            {
+                for (int p = 0; p < 3; p++)
+                {
+                    X.C[i, p] = false;
+                }
+            }
 
-            X.A41 = false;
-            X.A42 = false;
-            X.A43 = false;
-            X.B41 = false;
-            X.B42 = false;
-            X.B43 = false;
-            X.C41 = false;
-            X.C42 = false;
-            X.C43 = false;
+            for (int i = 0; i < 9; i++)
+            {
+                for (int p = 0; p < 3; p++)
+                {
+                    O.A[i, p] = false;
+                }
+            }
+            for (int i = 0; i < 9; i++)
+            {
+                for (int p = 0; p < 3; p++)
+                {
+                    O.B[i, p] = false;
+                }
+            }
+            for (int i = 0; i < 9; i++)
+            {
+                for (int p = 0; p < 3; p++)
+                {
+                    O.C[i, p] = false;
+                }
+            }
 
-            X.A51 = false;
-            X.A52 = false;
-            X.A53 = false;
-            X.B51 = false;
-            X.B52 = false;
-            X.B53 = false;
-            X.C51 = false;
-            X.C52 = false;
-            X.C53 = false;
 
-            X.A61 = false;
-            X.A62 = false;
-            X.A63 = false;
-            X.B61 = false;
-            X.B62 = false;
-            X.B63 = false;
-            X.C61 = false;
-            X.C62 = false;
-            X.C63 = false;
+             SquareDoneX[0] = false;
+             SquareDoneX[1] = false;
+             SquareDoneX[2] = false;
+             SquareDoneX[3] = false;
+             SquareDoneX[4] = false;
+             SquareDoneX[5] = false;
+             SquareDoneX[6] = false;
+             SquareDoneX[7] = false;
+             SquareDoneX[8] = false;
 
-            X.A71 = false;
-            X.A72 = false;
-            X.A73 = false;
-            X.B71 = false;
-            X.B72 = false;
-            X.B73 = false;
-            X.C71 = false;
-            X.C72 = false;
-            X.C73 = false;
-
-            X.A81 = false;
-            X.A82 = false;
-            X.A83 = false;
-            X.B81 = false;
-            X.B82 = false;
-            X.B83 = false;
-            X.C81 = false;
-            X.C82 = false;
-            X.C83 = false;
-
-            X.A91 = false;
-            X.A92 = false;
-            X.A93 = false;
-            X.B91 = false;
-            X.B92 = false;
-            X.B93 = false;
-            X.C91 = false;
-            X.C92 = false;
-            X.C93 = false;
-
-            O.A11 = false;
-            O.A12 = false;
-            O.A13 = false;
-            O.B11 = false;
-            O.B12 = false;
-            O.B13 = false;
-            O.C11 = false;
-            O.C12 = false;
-            O.C13 = false;
-
-            O.A21 = false;
-            O.A22 = false;
-            O.A23 = false;
-            O.B21 = false;
-            O.B22 = false;
-            O.B23 = false;
-            O.C21 = false;
-            O.C22 = false;
-            O.C23 = false;
-
-            O.A31 = false;
-            O.A32 = false;
-            O.A33 = false;
-            O.B31 = false;
-            O.B32 = false;
-            O.B33 = false;
-            O.C31 = false;
-            O.C32 = false;
-            O.C33 = false;
-
-            O.A41 = false;
-            O.A42 = false;
-            O.A43 = false;
-            O.B41 = false;
-            O.B42 = false;
-            O.B43 = false;
-            O.C41 = false;
-            O.C42 = false;
-            O.C43 = false;
-
-            O.A51 = false;
-            O.A52 = false;
-            O.A53 = false;
-            O.B51 = false;
-            O.B52 = false;
-            O.B53 = false;
-            O.C51 = false;
-            O.C52 = false;
-            O.C53 = false;
-
-            O.A61 = false;
-            O.A62 = false;
-            O.A63 = false;
-            O.B61 = false;
-            O.B62 = false;
-            O.B63 = false;
-            O.C61 = false;
-            O.C62 = false;
-            O.C63 = false;
-
-            O.A71 = false;
-            O.A72 = false;
-            O.A73 = false;
-            O.B71 = false;
-            O.B72 = false;
-            O.B73 = false;
-            O.C71 = false;
-            O.C72 = false;
-            O.C73 = false;
-
-            O.A81 = false;
-            O.A82 = false;
-            O.A83 = false;
-            O.B81 = false;
-            O.B82 = false;
-            O.B83 = false;
-            O.C81 = false;
-            O.C82 = false;
-            O.C83 = false;
-
-            O.A91 = false;
-            O.A92 = false;
-            O.A93 = false;
-            O.B91 = false;
-            O.B92 = false;
-            O.B93 = false;
-            O.C91 = false;
-            O.C92 = false;
-            O.C93 = false;
-
-             Square1DoneX = false;
-             Square2DoneX = false;
-             Square3DoneX = false;
-             Square4DoneX = false;
-             Square5DoneX = false;
-             Square6DoneX = false;
-             Square7DoneX = false;
-             Square8DoneX = false;
-             Square9DoneX = false;
-
-             Square1DoneO = false;
-             Square2DoneO = false;
-             Square3DoneO = false;
-             Square4DoneO = false;
-             Square5DoneO = false;
-             Square6DoneO = false;
-             Square7DoneO = false;
-             Square8DoneO = false;
-             Square9DoneO = false;
+             SquareDoneO[0] = false;
+             SquareDoneO[1] = false;
+             SquareDoneO[2] = false;
+             SquareDoneO[3] = false;
+             SquareDoneO[4] = false;
+             SquareDoneO[5] = false;
+             SquareDoneO[6] = false;
+             SquareDoneO[7] = false;
+             SquareDoneO[8] = false;
         }
        
 
@@ -1530,16 +1214,6 @@ namespace Tic_Tac_Toe
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewGame();
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This Is A ULTIMATE Tic Tac Toe Game. Made By Mike Hodges");
         }
 
         private void A21_Click(object sender, EventArgs e)
@@ -1968,6 +1642,14 @@ namespace Tic_Tac_Toe
             ForceArea(9);
         }
 
-        
+        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This Is A ULTIMATE Tic Tac Toe Game. Made By Mike Hodges");
+        }
     }
 }
