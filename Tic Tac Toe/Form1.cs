@@ -64,14 +64,13 @@ namespace Tic_Tac_Toe
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //MessageBox.Show("X Goes First Rn :)");
+            //Initailize The All SqaureDone Variables To False
             for (int i = 0; i < 9; i++)
             {
                 SquareDoneO[i] = false;
                 SquareDoneX[i] = false;
             }
         }
-
 
         //Declarations
         char turn = 'X';
@@ -80,11 +79,11 @@ namespace Tic_Tac_Toe
         Squares O = new Squares();
         bool[] SquareDoneX = new bool[9];
         bool[] SquareDoneO = new bool[9];
-        
         bool Finnished = false;
 
-        public void Wildcard() {
-
+        public void Wildcard()
+        {
+            //Function For When The User Selects Are Square That Is Already Filled "Wildcard"
             if (!SquareDoneO[0] && !SquareDoneX[0])
             {
                 UnBlankSquares(1);
@@ -124,11 +123,11 @@ namespace Tic_Tac_Toe
             {
                 UnBlankSquares(9);
             }
-
         }
 
-        public void UnBlankSquares(int area) {
-
+        public void UnBlankSquares(int area)
+        {
+            //The Function To UnBlank Certain Or All Squares
             switch (area)
             {
                 case 0:
@@ -138,20 +137,19 @@ namespace Tic_Tac_Toe
                     }
                     break;
                 case 1:
-                    //Example Of How To Whitelist Some of The Squares
-                    if (!SquareDoneX[0] && !SquareDoneO[0])
+                    if (!SquareDoneX[0] && !SquareDoneO[0]) //Check To Make Sure The Sqaure Has Not Been Won
                     {
                         int i = 0;
                         for (int p = 0; p < 3; p++)
                         {
                             if (!X.A[i, p] && !O.A[i, p])
                             {
-                                String name = "";
-                                char c = 'A';
-                                name += c;
-                                name += (i + 1);
-                                name += (p + 1);
-                                Controls[name].Enabled = true;
+                                String name = "";   //Initalize Name
+                                char c = 'A';       //Make The Letter
+                                name += c;          //Add The Letter
+                                name += (i + 1);    //Add The Big Sqaure 1-9 Index Adjusting For Zero Base
+                                name += (p + 1);    //Add The Vertical 1-3 Row Index Adjusting For Zero Base
+                                Controls[name].Enabled = true; //Enable The Selected Button
                             }
                             if (!X.B[i, p] && !O.B[i, p])
                             {
@@ -172,7 +170,6 @@ namespace Tic_Tac_Toe
                                 Controls[name].Enabled = true;
                             }
                         }
-
                     }
                     else
                     {
@@ -221,7 +218,6 @@ namespace Tic_Tac_Toe
                     {
                         Wildcard();
                     }
-
                     break;
                 case 3:
                     if (!SquareDoneO[2] && !SquareDoneX[2])
@@ -527,32 +523,31 @@ namespace Tic_Tac_Toe
                 default:
                     break;
             }
-
-
         }
 
 
-        public void BlankSquares(int area) {
-
+        public void BlankSquares(int area)
+        {
+            //Function To Blank All Or Certain Squares
             if (area == 0)
             {
                 for (int i = 1; i <= 9; i++)
                 {
-                    BlankSquares(i);
+                    BlankSquares(i);//Blank All Squares
                 }
             }
-            else {
+            else
+            {
                 for (int k = 0; k < 3; k++)
                 {
                     for (int p = 0; p < 3; p++)
                     {
                         String name = "";
-                        char c = (k == 0) ? 'A' : (k == 1) ? 'B' : 'C';
-                        name += c;
-                        name += area;
-                        name += (p + 1);
-                        Controls[name].Enabled = false;
-
+                        char c = (k == 0) ? 'A' : (k == 1) ? 'B' : 'C'; //Loop Through Letters
+                        name += c;          //Add The Letter
+                        name += area;       //Add Specified Area
+                        name += (p + 1);    //Add Sqaure Adjusting For Zero Base
+                        Controls[name].Enabled = false; //Blank The Sqaure
                     }
                 }
             }
@@ -562,7 +557,7 @@ namespace Tic_Tac_Toe
 
 
         public void SetText(int area, char team) {
-
+            //Sets The Text On The Button For The Respective Player
             if (team == 'X')
             {
                 for (int k = 0; k < 3; k++)
@@ -575,7 +570,6 @@ namespace Tic_Tac_Toe
                         name += area;
                         name += (p + 1);
                         Controls[name].Text = "X";
-
                     }
                 }
             }
@@ -598,9 +592,9 @@ namespace Tic_Tac_Toe
         }
 
 
-        public void ForceArea(int area) {
-
-            //Maybe i should unblnaked all buttons and then blank the things i need to
+        public void ForceArea(int area)
+        {
+            //The Function That Forces A User To Play In A Specfic Sqaure
             BlankSquares(0);
             if (!Finnished)
             {
@@ -609,8 +603,9 @@ namespace Tic_Tac_Toe
         }
 
 
-        public int CheckAreas() {
-
+        public int CheckAreas()
+        {
+            //Checks All The Areas To See If Any Sqaures Have Been Won
             xPermutations();
             oPermutations();
             if (SquareDoneX[0] || SquareDoneO[0])
@@ -740,20 +735,18 @@ namespace Tic_Tac_Toe
             {
                 return 2;
             }
-            return 100;
-            
+            return 100;   
         }
+
         public void CheckWin()
         {
+            //Checks To See If Any Player Won The Whole Game
             if (CheckAreas() == 1)
             {
                 BlankSquares(0);
                 MessageBox.Show("X WINS!", "Tic Tac Toe");
                 BlankSquares(0);
                 Finnished = true;
-                
-
-
             }
 
             if (CheckAreas() == 2)
@@ -762,16 +755,12 @@ namespace Tic_Tac_Toe
                 MessageBox.Show("O WINS!", "Tic Tac Toe");
                 BlankSquares(0);
                 Finnished = true;
-
             }
-
         }
-
-        
-  
 
         public void NewGame()
         {
+            //Clears Everything And Starts A New Game
             plays = 0;
             turn = 'X';
             resetSquare();
@@ -781,7 +770,6 @@ namespace Tic_Tac_Toe
         public void resetSquare()
         {
             //Reset The Text On All Of The Buttons
-
             for (int k = 0; k< 3; k++)
             {
                 for (int i = 0; i< 9; i++)
@@ -806,43 +794,10 @@ namespace Tic_Tac_Toe
                 for (int p = 0; p < 3; p++)
                 {
                     X.A[i, p] = false;
-                }
-            }
-
-            for (int i = 0; i < 9; i++)
-            {
-                for (int p = 0; p < 3; p++)
-                {
                     X.B[i, p] = false;
-                }
-            }
-
-            for (int i = 0; i < 9; i++)
-            {
-                for (int p = 0; p < 3; p++)
-                {
                     X.C[i, p] = false;
-                }
-            }
-
-            for (int i = 0; i < 9; i++)
-            {
-                for (int p = 0; p < 3; p++)
-                {
                     O.A[i, p] = false;
-                }
-            }
-            for (int i = 0; i < 9; i++)
-            {
-                for (int p = 0; p < 3; p++)
-                {
                     O.B[i, p] = false;
-                }
-            }
-            for (int i = 0; i < 9; i++)
-            {
-                for (int p = 0; p < 3; p++)
-                {
                     O.C[i, p] = false;
                 }
             }
@@ -854,9 +809,6 @@ namespace Tic_Tac_Toe
             }
         }
        
-
-        
-
         private void A1_Click(object sender, EventArgs e)
         {
             setSquare('A', 1, 1);
@@ -942,7 +894,8 @@ namespace Tic_Tac_Toe
 
         private void B22_Click(object sender, EventArgs e)
         {
-            setSquare('B', 2, 2); ForceArea(5);
+            setSquare('B', 2, 2);
+            ForceArea(5);
         }
 
         private void B23_Click(object sender, EventArgs e)

@@ -11,6 +11,7 @@ namespace Tic_Tac_Toe
     {
         public void xPermutations()
         {
+            //Checks To See If Any Of The Conditions To Win A Sqaure Have Been Met
             for (int i = 0; i < 9; i++)
             {
                 //First Section
@@ -98,13 +99,8 @@ namespace Tic_Tac_Toe
                         }
                     }
                 }
-
             }
-            
         }
-
-
-
 
         public void oPermutations()
         {
@@ -196,18 +192,14 @@ namespace Tic_Tac_Toe
                         }
                     }
                 }
-
             }
-
         }
 
 
 
         public int UltimatePermutaionsX()
         {
-
-            //Skeleton For Ultimate Permutations
-
+            //Checks To See If Any Of The Conditions To Win The Game Have Been Met
             int check = 0;
 
             //First Section
@@ -302,7 +294,6 @@ namespace Tic_Tac_Toe
                     }
                 }
             }
-
             return check;
         }
 
@@ -405,7 +396,6 @@ namespace Tic_Tac_Toe
                     }
                 }
             }
-
             return check;
         }
     }

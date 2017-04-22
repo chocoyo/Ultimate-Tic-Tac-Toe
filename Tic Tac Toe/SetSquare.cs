@@ -8,24 +8,22 @@ namespace Tic_Tac_Toe
 {
     public partial class Form1 : Form
     {
-        //Lets Do Some UNREALY HUGE SWITCH STATEMENT
-
         public void setSquare(char Letter, int Number, int Number2)
         {
-            //idek how to debug this so i really hope it works
+            //Function To Mark Squares For The Respective Player
             if (turn == 'X')
             {
                 switch (Letter)
                 {
                     case 'A':
-                        String name = "";
-                        name += Letter;
-                        name += Number;
-                        name += Number2;
-                        Controls[name].Text = "X";
-                        Controls[name].Enabled = false;
-                        X.A[Number - 1, Number2 - 1] = true;
-                        turn = 'O';
+                        String name = "";   //Initalize Name
+                        name += Letter;     //Add The Letter
+                        name += Number;     //Add The Big Sqaure 1-9 Index
+                        name += Number2;    //Add The Vertical 1-3 Row Index
+                        Controls[name].Text = "X"; //Change Text On That Button
+                        Controls[name].Enabled = false; //Disable That Button
+                        X.A[Number - 1, Number2 - 1] = true; //Mark The Corrisponding Bool Var As Taken
+                        turn = 'O'; //Switch The Turn
                         break;
 
                     case 'B':
@@ -53,7 +51,7 @@ namespace Tic_Tac_Toe
                     default:
                         break;
                 }
-                
+
 
             }
             else if (turn == 'O')
@@ -96,14 +94,9 @@ namespace Tic_Tac_Toe
                     default:
                         break;
                 }
-
-
             }
             plays++;
             CheckWin();
-
         }
-
     }
-
-    }
+}
