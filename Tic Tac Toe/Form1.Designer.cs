@@ -115,6 +115,7 @@
             this.B93 = new System.Windows.Forms.Button();
             this.B92 = new System.Windows.Forms.Button();
             this.A91 = new System.Windows.Forms.Button();
+            this.enableSinglePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,6 +134,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newGameToolStripMenuItem,
+            this.enableSinglePlayerToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -141,14 +143,14 @@
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
@@ -163,7 +165,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -977,6 +979,13 @@
             this.A91.UseVisualStyleBackColor = true;
             this.A91.Click += new System.EventHandler(this.A91_Click);
             // 
+            // enableSinglePlayerToolStripMenuItem
+            // 
+            this.enableSinglePlayerToolStripMenuItem.Name = "enableSinglePlayerToolStripMenuItem";
+            this.enableSinglePlayerToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.enableSinglePlayerToolStripMenuItem.Text = "Enable Single Player";
+            this.enableSinglePlayerToolStripMenuItem.Click += new System.EventHandler(this.enableSinglePlayerToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1165,6 +1174,7 @@
         private System.Windows.Forms.Button B93;
         private System.Windows.Forms.Button B92;
         private System.Windows.Forms.Button A91;
+        private System.Windows.Forms.ToolStripMenuItem enableSinglePlayerToolStripMenuItem;
     }
 }
 

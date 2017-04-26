@@ -80,9 +80,13 @@ namespace Tic_Tac_Toe
         bool[] SquareDoneX = new bool[9];
         bool[] SquareDoneO = new bool[9];
         bool Finnished = false;
+        int forcedArea;
+        bool CPU = false;
+        bool wildcard = false;
 
         public void Wildcard()
         {
+
             //Function For When The User Selects Are Square That Is Already Filled "Wildcard"
             if (!SquareDoneO[0] && !SquareDoneX[0])
             {
@@ -123,6 +127,7 @@ namespace Tic_Tac_Toe
             {
                 UnBlankSquares(9);
             }
+            cpu(true);
         }
 
         public void UnBlankSquares(int area)
@@ -600,6 +605,8 @@ namespace Tic_Tac_Toe
             {
                 UnBlankSquares(area);
             }
+            forcedArea = area;
+            cpu(false);
         }
 
 
@@ -808,7 +815,52 @@ namespace Tic_Tac_Toe
                 SquareDoneO[i] = false;
             }
         }
-       
+
+
+        private void cpu(bool card) {
+
+            if (card && CPU && turn == 'O' && !Finnished)
+            {
+                int k, p, f,l;
+                char c;
+                String name = "";
+                do
+                {
+                    Random rand = new Random();
+                    k = rand.Next(3);
+                    p = rand.Next(3);
+                    l = rand.Next(9);
+                    c = (k == 0) ? 'A' : (k == 1) ? 'B' : 'C';
+                    f = (k == 0) ? 0 : (k == 1) ? 3 : 6;
+                    name = "";
+                    name += c;
+                    name += (l + 1);
+                    name += (p + 1);
+                }while (!Controls[name].Enabled);
+                setSquare(c, (l + 1), (p + 1));
+                ForceArea((p + f) + 1);
+            }
+            else if (CPU && turn == 'O' && !Finnished)
+            {
+                int k, p, f;
+                char c;
+                String name = "";
+                do
+                {
+                    Random rand = new Random();
+                    k = rand.Next(3);
+                    p = rand.Next(3);
+                    c = (k == 0) ? 'A' : (k == 1) ? 'B' : 'C';
+                    f = (k == 0) ? 0 : (k == 1) ? 3 : 6;
+                    name = "";
+                    name += c;
+                    name += forcedArea;
+                    name += (p + 1);
+                }while (!Controls[name].Enabled);
+                setSquare(c, forcedArea, (p + 1));
+                ForceArea((p + f) + 1);
+            }
+        }
         private void A1_Click(object sender, EventArgs e)
         {
             setSquare('A', 1, 1);
@@ -1303,6 +1355,22 @@ namespace Tic_Tac_Toe
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This Is A ULTIMATE Tic Tac Toe Game. Made By Mike Hodges");
+        }
+
+        private void enableSinglePlayerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CPU)
+            {
+                NewGame();
+                CPU = true;
+                enableSinglePlayerToolStripMenuItem.Text = "Enable Multiplayer";
+            }
+            else if (CPU)
+            {
+                NewGame();
+                CPU = false;
+                enableSinglePlayerToolStripMenuItem.Text = "Enable Single Player";
+            }
         }
     }
 }
