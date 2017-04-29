@@ -8,49 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//This May Not Have Been The Smartest Way To Do This Project But I Put Certain Rules In Place
+//  About Code And Functions I Couldnt Use
+//  To Test My Abilites And Make It Harder To Do... More Fun That Way :)
 
 //Things to do
-
-//This Is Code For When I Finally Clean Things Up
-
-                        //for (int k = 0; k< 3; k++)
-                        //{
-                        //    for (int i = 0; i< 9; i++)
-                        //    {
-                        //        for (int p = 0; p< 3; p++)
-                        //        {
-                        //            if (!X.A[i, p] && !O.A[i, p])
-                        //            {
-                        //                String name = "";
-                        //                char c = (k == 0) ? 'A' : (k == 1) ? 'B' : 'C';
-                        //                name += c;
-                        //                name += (i + 1);
-                        //                name += (p + 1);
-                        //                Controls[name].Enabled = true;
-                        //            }
-                        //            if (!X.B[i, p] && !O.B[i, p])
-                        //            {
-                        //                String name = "";
-                        //                char c = (k == 0) ? 'A' : (k == 1) ? 'B' : 'C';
-                        //                name += c;
-                        //                name += (i + 1);
-                        //                name += (p + 1);
-                        //                Controls[name].Enabled = true;
-                        //            }
-                        //            if (!X.C[i, p] && !O.C[i, p])
-                        //            {
-                        //                String name = "";
-                        //                char c = (k == 0) ? 'A' : (k == 1) ? 'B' : 'C';
-                        //                name += c;
-                        //                name += (i + 1);
-                        //                name += (p + 1);
-                        //                Controls[name].Enabled = true;
-                        //            }
-                        //        }
-                        //    }
-                        //}
-
-
 
 
 namespace Tic_Tac_Toe
@@ -82,50 +44,16 @@ namespace Tic_Tac_Toe
         bool Finnished = false;
         int forcedArea;
         bool CPU = false;
-        bool wildcard = false;
 
         public void Wildcard()
         {
-
             //Function For When The User Selects Are Square That Is Already Filled "Wildcard"
-            if (!SquareDoneO[0] && !SquareDoneX[0])
+            for (int i = 0; i < 9; i++)
             {
-                UnBlankSquares(1);
-            }
-
-            if (!SquareDoneO[1] && !SquareDoneX[1])
-            {
-                UnBlankSquares(2);
-            }
-
-            if (!SquareDoneO[2] && !SquareDoneX[2])
-            {
-                UnBlankSquares(3);
-            }
-
-            if (!SquareDoneO[3] && !SquareDoneX[3])
-            {
-                UnBlankSquares(4);
-            }
-            if (!SquareDoneO[4] && !SquareDoneX[4])
-            {
-                UnBlankSquares(5);
-            }
-            if (!SquareDoneO[5] && !SquareDoneX[5])
-            {
-                UnBlankSquares(6);
-            }
-            if (!SquareDoneO[6] && !SquareDoneX[6])
-            {
-                UnBlankSquares(7);
-            }
-            if (!SquareDoneO[7] && !SquareDoneX[7])
-            {
-                UnBlankSquares(8);
-            }
-            if (!SquareDoneO[8] && !SquareDoneX[8])
-            {
-                UnBlankSquares(9);
+                if (!SquareDoneO[i] && !SquareDoneX[i])
+                {
+                    UnBlankSquares(i+1);
+                }
             }
             cpu(true);
         }
@@ -133,403 +61,55 @@ namespace Tic_Tac_Toe
         public void UnBlankSquares(int area)
         {
             //The Function To UnBlank Certain Or All Squares
-            switch (area)
+            if (area == 0)
             {
-                case 0:
-                    for (int i = 1; i <= 9; i++)
+                for (int k = 1; k <= 9; k++)
+                {
+                    UnBlankSquares(k);  //Recursion To Unblank All of The Squares
+                }
+            }
+            else
+            {
+                if (!SquareDoneX[area-1] && !SquareDoneO[area-1]) //Check To Make Sure The Sqaure Has Not Been Won
+                {
+                    int i = area - 1;
+                    for (int p = 0; p < 3; p++)
                     {
-                        UnBlankSquares(i);
-                    }
-                    break;
-                case 1:
-                    if (!SquareDoneX[0] && !SquareDoneO[0]) //Check To Make Sure The Sqaure Has Not Been Won
-                    {
-                        int i = 0;
-                        for (int p = 0; p < 3; p++)
+                        if (!X.A[i, p] && !O.A[i, p])
                         {
-                            if (!X.A[i, p] && !O.A[i, p])
-                            {
-                                String name = "";   //Initalize Name
-                                char c = 'A';       //Make The Letter
-                                name += c;          //Add The Letter
-                                name += (i + 1);    //Add The Big Sqaure 1-9 Index Adjusting For Zero Base
-                                name += (p + 1);    //Add The Vertical 1-3 Row Index Adjusting For Zero Base
-                                Controls[name].Enabled = true; //Enable The Selected Button
-                            }
-                            if (!X.B[i, p] && !O.B[i, p])
-                            {
-                                String name = "";
-                                char c = 'B';
-                                name += c;
-                                name += (i + 1);
-                                name += (p + 1);
-                                Controls[name].Enabled = true;
-                            }
-                            if (!X.C[i, p] && !O.C[i, p])
-                            {
-                                String name = "";
-                                char c = 'C';
-                                name += c;
-                                name += (i+1);
-                                name += (p + 1);
-                                Controls[name].Enabled = true;
-                            }
+                            String name = "";   //Initalize Name
+                            char c = 'A';       //Make The Letter
+                            name += c;          //Add The Letter
+                            name += (i + 1);    //Add The Big Sqaure 1-9 Index Adjusting For Zero Base
+                            name += (p + 1);    //Add The Vertical 1-3 Row Index Adjusting For Zero Base
+                            Controls[name].Enabled = true; //Enable The Selected Button
+                        }
+                        if (!X.B[i, p] && !O.B[i, p])
+                        {
+                            String name = "";
+                            char c = 'B';
+                            name += c;
+                            name += (i + 1);
+                            name += (p + 1);
+                            Controls[name].Enabled = true;
+                        }
+                        if (!X.C[i, p] && !O.C[i, p])
+                        {
+                            String name = "";
+                            char c = 'C';
+                            name += c;
+                            name += (i+1);
+                            name += (p + 1);
+                            Controls[name].Enabled = true;
                         }
                     }
-                    else
-                    {
-                        Wildcard();
-                    }
-                    break;
-                case 2:
-                    if (!SquareDoneO[1] && !SquareDoneX[1])
-                    {
-                        int i = (area - 1);
-                        for (int k = 0; k < 3; k++)
-                        {
-                            for (int p = 0; p < 3; p++)
-                            {
-                                if (!X.A[i, p] && !O.A[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'A';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.B[i, p] && !O.B[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'B';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.C[i, p] && !O.C[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'C';
-                                    name += c;
-                                    name += (i+1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Wildcard();
-                    }
-                    break;
-                case 3:
-                    if (!SquareDoneO[2] && !SquareDoneX[2])
-                    {
-                        int i = (area - 1);
-                        for (int k = 0; k < 3; k++)
-                        {
-                            for (int p = 0; p < 3; p++)
-                            {
-                                if (!X.A[i, p] && !O.A[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'A';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.B[i, p] && !O.B[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'B';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.C[i, p] && !O.C[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'C';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Wildcard();
-                    }
-                    break;
-                case 4:
-                    if (!SquareDoneO[3] && !SquareDoneX[3])
-                    {
-                        int i = (area - 1);
-                        for (int k = 0; k < 3; k++)
-                        {
-                            for (int p = 0; p < 3; p++)
-                            {
-                                if (!X.A[i, p] && !O.A[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'A';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.B[i, p] && !O.B[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'B';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.C[i, p] && !O.C[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'C';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Wildcard();
-                    }
-                    break;
-                case 5:
-                    if (!SquareDoneO[4] && !SquareDoneX[4])
-                    {
-                        int i = (area - 1);
-                        for (int k = 0; k < 3; k++)
-                        {
-                            for (int p = 0; p < 3; p++)
-                            {
-                                if (!X.A[i, p] && !O.A[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'A';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.B[i, p] && !O.B[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'B';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.C[i, p] && !O.C[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'C';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Wildcard();
-                    }
-                    break;
-                case 6:
-                    if (!SquareDoneO[5] && !SquareDoneX[5])
-                    {
-                        int i = (area - 1);
-                        for (int k = 0; k < 3; k++)
-                        {
-                            for (int p = 0; p < 3; p++)
-                            {
-                                if (!X.A[i, p] && !O.A[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'A';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.B[i, p] && !O.B[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'B';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.C[i, p] && !O.C[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'C';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Wildcard();
-                    }
-                    break;
-                case 7:
-                    if (!SquareDoneO[6] && !SquareDoneX[6])
-                    {
-                        int i = (area - 1);
-                        for (int k = 0; k < 3; k++)
-                        {
-                            for (int p = 0; p < 3; p++)
-                            {
-                                if (!X.A[i, p] && !O.A[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'A';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.B[i, p] && !O.B[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'B';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.C[i, p] && !O.C[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'C';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Wildcard();
-                    }
-                    break;
-                case 8:
-                    if (!SquareDoneO[7] && !SquareDoneX[7])
-                    {
-                        int i = (area - 1);
-                        for (int k = 0; k < 3; k++)
-                        {
-                            for (int p = 0; p < 3; p++)
-                            {
-                                if (!X.A[i, p] && !O.A[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'A';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.B[i, p] && !O.B[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'B';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.C[i, p] && !O.C[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'C';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Wildcard();
-                    }
-                    break;
-                case 9:
-                    if (!SquareDoneO[8] && !SquareDoneX[8])
-                    {
-                        int i = (area - 1);
-                        for (int k = 0; k < 3; k++)
-                        {
-                            for (int p = 0; p < 3; p++)
-                            {
-                                if (!X.A[i, p] && !O.A[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'A';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.B[i, p] && !O.B[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'B';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                                if (!X.C[i, p] && !O.C[i, p])
-                                {
-                                    String name = "";
-                                    char c = 'C';
-                                    name += c;
-                                    name += (i + 1);
-                                    name += (p + 1);
-                                    Controls[name].Enabled = true;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Wildcard();
-                    }
-                    break;
-                default:
-                    break;
+                }
+                else
+                {
+                    Wildcard();
+                }
             }
         }
-
 
         public void BlankSquares(int area)
         {
@@ -615,123 +195,21 @@ namespace Tic_Tac_Toe
             //Checks All The Areas To See If Any Sqaures Have Been Won
             xPermutations();
             oPermutations();
-            if (SquareDoneX[0] || SquareDoneO[0])
-            {
-                BlankSquares(1);
-                if (SquareDoneX[0])
-                {
-                    SetText(1, 'X');
-                }
-                else
-                {
-                    SetText(1, 'O');
-                }
-                
-            }
 
-            if (SquareDoneX[1] || SquareDoneO[1])
+            for (int i = 0; i < 9; i++)
             {
-                BlankSquares(2);
-                if (SquareDoneX[1])
+                if (SquareDoneX[i] || SquareDoneO[i])
                 {
-                    SetText(2, 'X');
+                    BlankSquares(i+1);
+                    if (SquareDoneX[i])
+                    {
+                        SetText(i+1, 'X');
+                    }
+                    else
+                    {
+                        SetText(i+1, 'O');
+                    }
                 }
-                else
-                {
-                    SetText(2, 'O');
-                }
-
-            }
-            if (SquareDoneX[2] || SquareDoneO[2])
-            {
-                BlankSquares(3);
-                if (SquareDoneX[2])
-                {
-                    SetText(3, 'X');
-                }
-                else
-                {
-                    SetText(3, 'O');
-                }
-
-            }
-            if (SquareDoneX[3] || SquareDoneO[3])
-            {
-                BlankSquares(4);
-                if (SquareDoneX[3])
-                {
-                    SetText(4, 'X');
-                }
-                else
-                {
-                    SetText(4, 'O');
-                }
-
-            }
-            if (SquareDoneX[4] || SquareDoneO[4])
-            {
-                BlankSquares(5);
-                if (SquareDoneX[4])
-                {
-                    SetText(5, 'X');
-                }
-                else
-                {
-                    SetText(5, 'O');
-                }
-
-            }
-            if (SquareDoneX[5] || SquareDoneO[5])
-            {
-                BlankSquares(6);
-                if (SquareDoneX[5])
-                {
-                    SetText(6, 'X');
-                }
-                else
-                {
-                    SetText(6, 'O');
-                }
-
-            }
-            if (SquareDoneX[6] || SquareDoneO[6])
-            {
-                BlankSquares(7);
-                if (SquareDoneX[6])
-                {
-                    SetText(7, 'X');
-                }
-                else
-                {
-                    SetText(7, 'O');
-                }
-
-            }
-            if (SquareDoneX[7] || SquareDoneO[7])
-            {
-                BlankSquares(8);
-                if (SquareDoneX[7])
-                {
-                    SetText(8, 'X');
-                }
-                else
-                {
-                    SetText(8, 'O');
-                }
-
-            }
-            if (SquareDoneX[8] || SquareDoneO[8])
-            {
-                BlankSquares(9);
-                if (SquareDoneX[8])
-                {
-                    SetText(9, 'X');
-                }
-                else
-                {
-                    SetText(9, 'O');
-                }
-
             }
 
             if (UltimatePermutaionsX() == 1)
